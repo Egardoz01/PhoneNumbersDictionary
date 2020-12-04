@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace PhoneNumbersDictionary
 {
-    class Db
+    public class Db
     {
         public SqlConnection _conn { get; private set; }
         public OrganizationRepository OrganizationRepository { get; private set; }
@@ -58,13 +58,80 @@ namespace PhoneNumbersDictionary
                 PhoneNumberRepository.Add(phone);
             }
 
-            foreach (var info in org.AdditionaInfosToAdd)
+            foreach (var info in org.AdditionalInfosToAdd)
             {
                 info.OrganizaionId = id;
                 AdditionalInfoRepository.Add(info);
             }
         }
 
+        public void EditOrganization(Organization org)
+        {
+            OrganizationRepository.Edit(org);
+            int id = org.Id;
+            foreach (var phone in org.PhoneNumbersToAdd)
+            {
+                phone.OrganizaionId = id;
+                PhoneNumberRepository.Add(phone);
+            }
+
+            foreach (var phone in org.PhoneNumbersToEdit)
+            {
+                PhoneNumberRepository.Edit(phone);
+            }
+
+            foreach (var phone in org.PhoneNumbersToRemove)
+            {
+                PhoneNumberRepository.Remove(phone);
+            }
+
+
+            foreach (var info in org.AdditionalInfosToAdd)
+            {
+                info.OrganizaionId = id;
+                AdditionalInfoRepository.Add(info);
+            }
+
+            foreach (var info in org.AdditionalInfosToEdit)
+            {
+                AdditionalInfoRepository.Edit(info);
+            }
+
+            foreach (var info in org.AdditionalInfosToRemove)
+            {
+                AdditionalInfoRepository.Remove(info);
+            }
+
+        }
+
+        public List<Organization> GetOrganizations(string query="")
+        {
+            List<Organization> orgs = OrganizationRepository.GetOrganizations(query);
+
+            foreach (var org in orgs)
+            {
+                org.PhoneNumbers = PhoneNumberRepository.GetPhoneNumbersByOrganizationId(org.Id);
+                org.AdditionalInfos = AdditionalInfoRepository.GetAdditionalInfosByOrganizationId(org.Id);
+            }
+
+            return orgs;
+        }
+
+        public void RemoveOrganization(Organization org)
+        {
+            string query = "DELETE FROM PhoneNumber where OrganizationId=" + org.Id;
+            SqlCommand cmd = new SqlCommand(query,_conn);
+            cmd.ExecuteNonQuery();
+           
+            query = "DELETE FROM AdditionalInfo where OrganizationId=" + org.Id;
+            cmd = new SqlCommand(query, _conn);
+            cmd.ExecuteNonQuery();
+
+            query = "DELETE FROM Organization where Id=" + org.Id;
+            cmd = new SqlCommand(query, _conn);
+            cmd.ExecuteNonQuery();
+
+        }
 
     }
 }

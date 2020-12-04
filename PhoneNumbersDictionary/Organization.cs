@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,26 +16,43 @@ namespace PhoneNumbersDictionary
 
         public string Profile { get; set; }
 
+        public List<PhoneNumber> PhoneNumbers { get; set; }
+
         public List<PhoneNumber> PhoneNumbersToAdd { get; set; }
 
         public List<PhoneNumber> PhoneNumbersToEdit{ get; set; }
 
         public List<PhoneNumber> PhoneNumbersToRemove { get; set; }
 
-        public List<AdditionaInfo> AdditionaInfosToAdd { get; set; }
+        public List<AdditionalInfo> AdditionalInfos { get; set; }
 
-        public List<AdditionaInfo> AdditionaInfosToEdit { get; set; }
+        public List<AdditionalInfo> AdditionalInfosToAdd { get; set; }
 
-        public List<AdditionaInfo> AdditionaInfosRemove { get; set; }
+        public List<AdditionalInfo> AdditionalInfosToEdit { get; set; }
+
+        public List<AdditionalInfo> AdditionalInfosToRemove { get; set; }
 
         public Organization()
         {
             PhoneNumbersToAdd = new List<PhoneNumber>();
             PhoneNumbersToEdit = new List<PhoneNumber>();
             PhoneNumbersToRemove = new List<PhoneNumber>();
-            AdditionaInfosToAdd = new List<AdditionaInfo>();
-            AdditionaInfosRemove = new List<AdditionaInfo>();
-            AdditionaInfosToEdit = new List<AdditionaInfo>();
+            AdditionalInfosToAdd = new List<AdditionalInfo>();
+            AdditionalInfosToRemove = new List<AdditionalInfo>();
+            AdditionalInfosToEdit = new List<AdditionalInfo>();
+        }
+
+        public Organization(SqlDataReader reader) :this()
+        {
+            Id = (int)reader["Id"];
+            Name = (string)reader["Name"];
+            Profile = (string)reader["Profile"];
+            Location = (string)reader["Location"];
+        }
+
+        public override string ToString()
+        {
+            return Name+" - "+Profile;
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,23 @@ namespace PhoneNumbersDictionary
         public override string ToString()
         {
             return Name+": "+PhoneNumberstr;
+        }
+        public PhoneNumber()
+        { 
+        }
+
+        public PhoneNumber(PhoneNumber phone)
+        {
+            Id = phone.Id;
+            Name = phone.Name;
+            PhoneNumberstr = phone.PhoneNumberstr;
+        }
+        public PhoneNumber(SqlDataReader reader) 
+        {
+            Id = (int)reader["Id"];
+            Name = (string)reader["Name"];
+            PhoneNumberstr = (string)reader["PhoneNumber"];
+            OrganizaionId = (int)reader["OrganizationId"];
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PhoneNumbersDictionary
 {
-    class AdditionalInfoRepository
+    public class AdditionalInfoRepository
     {
 
         private readonly SqlConnection _conn;
@@ -17,7 +17,7 @@ namespace PhoneNumbersDictionary
             _conn = conn;
         }
 
-        public int Add(AdditionaInfo info)
+        public int Add(AdditionalInfo info)
         {
             string query;
             query = String.Format("INSERT INTO AdditionalInfo (InfoType,InfoData,OrganizationId)  VALUES ('{0}','{1}',{2})", info.InfoType, info.InfoData, info.OrganizaionId);
@@ -25,6 +25,44 @@ namespace PhoneNumbersDictionary
             SqlCommand cmd = new SqlCommand(query, _conn);
 
             return cmd.ExecuteNonQuery();
+        }
+
+
+        public int Edit(AdditionalInfo info)
+        {
+            string query;
+            query = String.Format("UPDATE AdditionalInfo SET InfoType ='{0}', InfoData = '{1}' WHERE Id={2}", info.InfoType, info.InfoData, info.Id);
+
+            SqlCommand cmd = new SqlCommand(query, _conn);
+
+            return cmd.ExecuteNonQuery();
+        }
+
+        public int Remove(AdditionalInfo info)
+        {
+            string query;
+            query = String.Format("DELETE FROM AdditionalInfo  WHERE Id={0}", info.Id);
+
+            SqlCommand cmd = new SqlCommand(query, _conn);
+
+            return cmd.ExecuteNonQuery();
+        }
+
+        public List<AdditionalInfo> GetAdditionalInfosByOrganizationId(int id)
+        {
+            List<AdditionalInfo> infos= new List<AdditionalInfo>();
+
+            string query = "SELECT * FROM AdditionalInfo where OrganizationId=" + id;
+            SqlCommand cmd = new SqlCommand(query, _conn);
+            var reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                AdditionalInfo info = new AdditionalInfo(reader);
+                infos.Add(info);
+            }
+
+            return infos;
         }
     }
 }

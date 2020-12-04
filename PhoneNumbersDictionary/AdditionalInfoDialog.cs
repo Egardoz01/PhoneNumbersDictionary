@@ -12,8 +12,8 @@ namespace PhoneNumbersDictionary
 {
     public partial class AdditionalInfoDialog : Form
     {
-        public AdditionaInfo AdditionalInfo;
-        public AdditionalInfoDialog(AdditionaInfo info = null)
+        public AdditionalInfo AdditionalInfo;
+        public AdditionalInfoDialog(AdditionalInfo info = null)
         {
             InitializeComponent();
             AdditionalInfo = info;
@@ -23,7 +23,7 @@ namespace PhoneNumbersDictionary
                 txtbxInfoType.Text = AdditionalInfo.InfoType;
             }
             else
-                AdditionalInfo = new AdditionaInfo();
+                AdditionalInfo = new AdditionalInfo();
         }
 
         private void btnOK_Click(object sender, EventArgs e)

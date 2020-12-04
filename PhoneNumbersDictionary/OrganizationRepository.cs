@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 namespace PhoneNumbersDictionary
 {
-    class OrganizationRepository
+    public class OrganizationRepository
     {
         private readonly SqlConnection _conn;
 
@@ -23,6 +23,35 @@ namespace PhoneNumbersDictionary
             SqlCommand cmd = new SqlCommand(query,_conn);
 
             return (int)cmd.ExecuteScalar();
+        }
+
+        public int Edit(Organization org)
+        {
+            string query;
+            query = String.Format("UPDATE Organization SET Name ='{0}', Location = '{1}', Profile = '{2}' WHERE Id={3}", org.Name, org.Location, org.Profile,org.Id);
+
+            SqlCommand cmd = new SqlCommand(query, _conn);
+
+            return cmd.ExecuteNonQuery();
+        }
+
+        public List<Organization> GetOrganizations(string query="")
+        {
+            List<Organization> orgs = new List<Organization>();
+
+            if(query=="")
+              query = "SELECT * FROM Organization";
+
+            SqlCommand cmd = new SqlCommand(query,_conn);
+            var reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                Organization org = new Organization(reader);
+                orgs.Add(org);
+            }
+
+            return orgs;
         }
 
     }

@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdditionaInfo.cs" />
+    <Compile Include="AdditionalInfo.cs" />
     <Compile Include="AdditionalInfoDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +60,13 @@
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrganizationFilter.cs" />
+    <Compile Include="OrganizationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrganizationForm.Designer.cs">
+      <DependentUpon>OrganizationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Organization.cs" />
     <Compile Include="OrganizationRepository.cs" />
@@ -78,6 +85,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrganizationForm.resx">
+      <DependentUpon>OrganizationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PhoneNumberDialog.resx">
       <DependentUpon>PhoneNumberDialog.cs</DependentUpon>

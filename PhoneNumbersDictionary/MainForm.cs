@@ -12,148 +12,51 @@ namespace PhoneNumbersDictionary
 {
     public partial class MainForm : Form
     {
-
-        private readonly Db db;
-        private Organization org;
+        private readonly Db db; 
         public MainForm()
         {
-            db = new Db();
             InitializeComponent();
-            AddContextMenu();
-
-           org = new Organization();
-        }
-
-        private void AddContextMenu()
-        {
-            ContextMenu menu = new ContextMenu();
-
-            MenuItem editItem = new MenuItem();
-            editItem.Text = "Edit";
-            editItem.Click += new EventHandler(EditPhoneNumberItem);
-
-            MenuItem removeItem = new MenuItem();
-            removeItem.Text = "Remove";
-            removeItem.Click += new EventHandler(RemovePhoneNumberItem);
-
-
-            menu.MenuItems.Add(editItem);
-            menu.MenuItems.Add(removeItem);
-            lbPhoneNumbers.ContextMenu = menu;
-        }
-
-        private void btnAddPhoneNumber_Click(object sender, EventArgs e)
-        {
-            PhoneNumberDialog dlg = new PhoneNumberDialog();
-            dlg.ShowDialog();
-            if (dlg.DialogResult == DialogResult.OK)
-            {
-                lbPhoneNumbers.Items.Add(dlg.PhoneNumber);
-                org.PhoneNumbersToAdd.Add(dlg.PhoneNumber);
-            }
-        }
-
-        private void btnAddInfo_Click(object sender, EventArgs e)
-        {
-            AdditionalInfoDialog dlg = new AdditionalInfoDialog();
-            dlg.ShowDialog();
-            if (dlg.DialogResult == DialogResult.OK)
-            {
-                lbAdditionalInfo.Items.Add(dlg.AdditionalInfo);
-                org.AdditionaInfosToAdd.Add(dlg.AdditionalInfo);
-            }
+            db = new Db();
         }
 
         private void btnAddOrganization_Click(object sender, EventArgs e)
         {
-      
-            org.Name = txtbxName.Text;
-            org.Profile = txtbxProfile.Text;
-            org.Location = txtbxLocation.Text;
+            OrganizationForm form = new OrganizationForm(db);
+            form.ShowDialog();
+            LoadOrganizations();
+        }
 
-            db.AddOrganization(org);
+
+        private void LoadOrganizations(string query = "")
+        {
+            lbOrganizations.Items.Clear();
+            lbOrganizations.Items.AddRange(db.GetOrganizations(query).ToArray());
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            
+            LoadOrganizations();
         }
 
-        private void EditPhoneNumberItem(object sender, EventArgs e)
+        private void lbOrganizations_DoubleClick(object sender, EventArgs e)
         {
-            PhoneNumber phone = (PhoneNumber)lbPhoneNumbers.SelectedItem;
-
-          
+            Organization org = (Organization)lbOrganizations.SelectedItem;
+            OrganizationForm form = new OrganizationForm(db,org);
+            form.ShowDialog();
+            LoadOrganizations();
         }
 
-        private void RemovePhoneNumberItem(object sender, EventArgs e)
+        private void btnOrgSearch_Click(object sender, EventArgs e)
         {
-            PhoneNumber phone = (PhoneNumber)lbPhoneNumbers.SelectedItem;
+            string query = OrganizationFilter.GetQuery(txtbxOrgName.Text,rbNameComplete.Checked,
+                                                              txtbxOrgLocation.Text,rbLocationComplete.Checked,
+                                                              txtbxOrgProfile.Text,rbProfileComplete.Checked);
+            LoadOrganizations(query);
         }
 
-        private void tabAddOrganization_Click(object sender, EventArgs e)
+        private void btnShowAll_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbAdditionalInfo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtbxProfile_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtbxLocation_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtbxName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbPhoneNumbers_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-
+            LoadOrganizations();
         }
     }
 }

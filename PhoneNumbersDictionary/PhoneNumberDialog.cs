@@ -14,17 +14,23 @@ namespace PhoneNumbersDictionary
     {
 
         public PhoneNumber PhoneNumber { get; set; }
-        public PhoneNumberDialog()
+        public PhoneNumberDialog(PhoneNumber phone=null)
         {
             InitializeComponent();
-            
+            PhoneNumber = phone;
+            if (PhoneNumber == null)
+                PhoneNumber = new PhoneNumber();
+            else
+            {
+                txtbxPhoneNumber.Text = PhoneNumber.PhoneNumberstr;
+                txtbxtName.Text = PhoneNumber.Name;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             if (!doCheck())
                 return;
-            PhoneNumber = new PhoneNumber();
             PhoneNumber.Name = txtbxtName.Text;
             PhoneNumber.PhoneNumberstr = txtbxPhoneNumber.Text;
             DialogResult = DialogResult.OK;
