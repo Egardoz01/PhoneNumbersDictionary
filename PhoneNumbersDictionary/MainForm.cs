@@ -23,19 +23,25 @@ namespace PhoneNumbersDictionary
         {
             OrganizationForm form = new OrganizationForm(db);
             form.ShowDialog();
-            LoadOrganizations();
+            LoadAllOrganizations();
         }
 
 
-        private void LoadOrganizations(string query = "")
+        private void LoadAllOrganizations()
         {
             lbOrganizations.Items.Clear();
-            lbOrganizations.Items.AddRange(db.GetOrganizations(query).ToArray());
+            lbOrganizations.Items.AddRange(db.GetOrganizations(new OrganizationBasicFiltet()).ToArray());
         }
+        private void LoadOrganizationsByFilter(IOrganizationFilter filter)
+        {
+            lbOrganizations.Items.Clear();
+            lbOrganizations.Items.AddRange(db.GetOrganizations(filter).ToArray());
+        }
+
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            LoadOrganizations();
+            LoadAllOrganizations();
         }
 
         private void lbOrganizations_DoubleClick(object sender, EventArgs e)
@@ -43,20 +49,32 @@ namespace PhoneNumbersDictionary
             Organization org = (Organization)lbOrganizations.SelectedItem;
             OrganizationForm form = new OrganizationForm(db,org);
             form.ShowDialog();
-            LoadOrganizations();
+            LoadAllOrganizations();
         }
 
         private void btnOrgSearch_Click(object sender, EventArgs e)
         {
-            string query = OrganizationFilter.GetQuery(txtbxOrgName.Text,rbNameComplete.Checked,
-                                                              txtbxOrgLocation.Text,rbLocationComplete.Checked,
-                                                              txtbxOrgProfile.Text,rbProfileComplete.Checked);
-            LoadOrganizations(query);
+            OrganizationFilterByData filter = new OrganizationFilterByData();
+            filter.orgName = txtbxOrgName.Text;
+            filter.orgNameComplete = rbNameComplete.Checked;
+            filter.orgLocation = txtbxOrgLocation.Text;
+            filter.orgLocationComplete = rbLocationComplete.Checked;
+            filter.orgProfile = txtbxOrgProfile.Text;
+            filter.orgProfileComplete = rbProfileComplete.Checked;
+            LoadOrganizationsByFilter(filter);
         }
 
         private void btnShowAll_Click(object sender, EventArgs e)
         {
-            LoadOrganizations();
+            LoadAllOrganizations();
+        }
+
+        private void btnPhoneSearch_Click(object sender, EventArgs e)
+        {
+            OrganizationFilterByPhone filter = new OrganizationFilterByPhone();
+            filter.PhoneNumber = txtbxPhoneNumber.Text;
+            filter.CompleteMatch = rbPhoneCompleteMatch.Checked;
+            LoadOrganizationsByFilter(filter);
         }
     }
 }

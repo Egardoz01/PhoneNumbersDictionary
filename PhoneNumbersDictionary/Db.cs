@@ -104,9 +104,10 @@ namespace PhoneNumbersDictionary
 
         }
 
-        public List<Organization> GetOrganizations(string query="")
+
+        public List<Organization> GetOrganizations(IOrganizationFilter filter)
         {
-            List<Organization> orgs = OrganizationRepository.GetOrganizations(query);
+            List<Organization> orgs = OrganizationRepository.GetOrganizations(filter.GetQuery());
 
             foreach (var org in orgs)
             {
@@ -116,6 +117,8 @@ namespace PhoneNumbersDictionary
 
             return orgs;
         }
+
+
 
         public void RemoveOrganization(Organization org)
         {

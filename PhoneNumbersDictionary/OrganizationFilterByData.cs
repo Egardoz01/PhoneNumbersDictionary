@@ -6,10 +6,17 @@ using System.Threading.Tasks;
 
 namespace PhoneNumbersDictionary
 {
-    public static class OrganizationFilter
-    {
 
-        public static string GetQuery(string orgName, bool orgNameComplete, string orgLocation, bool orgLocationComplete, string orgProfile,bool orgProfileComplete)
+  
+    public  class OrganizationFilterByData: IOrganizationFilter
+    {
+        public string orgName;
+        public bool orgNameComplete;
+        public string orgLocation;
+        public  bool orgLocationComplete;
+        public  string orgProfile;
+        public  bool orgProfileComplete;
+        public string GetQuery()
         {
             string query="SELECT * FROM Organization WHERE ";
             query += "Name ";

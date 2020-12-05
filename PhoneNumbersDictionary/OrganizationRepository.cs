@@ -35,12 +35,9 @@ namespace PhoneNumbersDictionary
             return cmd.ExecuteNonQuery();
         }
 
-        public List<Organization> GetOrganizations(string query="")
+        public List<Organization> GetOrganizations(string query)
         {
             List<Organization> orgs = new List<Organization>();
-
-            if(query=="")
-              query = "SELECT * FROM Organization";
 
             SqlCommand cmd = new SqlCommand(query,_conn);
             var reader = cmd.ExecuteReader();
