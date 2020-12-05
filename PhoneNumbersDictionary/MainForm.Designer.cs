@@ -58,6 +58,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.rbPhoneCompleteMatch = new System.Windows.Forms.RadioButton();
             this.btnPhoneSearch = new System.Windows.Forms.Button();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -360,11 +361,21 @@
             this.btnPhoneSearch.UseVisualStyleBackColor = true;
             this.btnPhoneSearch.Click += new System.EventHandler(this.btnPhoneSearch_Click);
             // 
+            // groupBox7
+            // 
+            this.groupBox7.Location = new System.Drawing.Point(732, 256);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(322, 188);
+            this.groupBox7.TabIndex = 7;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "groupBox7";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1087, 595);
+            this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.btnShowAll);
             this.Controls.Add(this.groupBox1);
@@ -421,5 +432,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RadioButton rbPhoneCompleteMatch;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.GroupBox groupBox7;
     }
 }
