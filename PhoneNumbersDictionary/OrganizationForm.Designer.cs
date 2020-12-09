@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrganizationForm));
             this.btnAddOrganization = new System.Windows.Forms.Button();
             this.lblMain = new System.Windows.Forms.Label();
             this.btnAddInfo = new System.Windows.Forms.Button();
@@ -51,11 +52,13 @@
             // 
             // btnAddOrganization
             // 
-            this.btnAddOrganization.BackColor = System.Drawing.Color.DarkGray;
+            this.btnAddOrganization.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
+            this.btnAddOrganization.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAddOrganization.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddOrganization.Location = new System.Drawing.Point(835, 580);
+            this.btnAddOrganization.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
+            this.btnAddOrganization.Location = new System.Drawing.Point(1019, 580);
             this.btnAddOrganization.Name = "btnAddOrganization";
-            this.btnAddOrganization.Size = new System.Drawing.Size(166, 42);
+            this.btnAddOrganization.Size = new System.Drawing.Size(179, 42);
             this.btnAddOrganization.TabIndex = 23;
             this.btnAddOrganization.Text = "Add Organization";
             this.btnAddOrganization.UseVisualStyleBackColor = false;
@@ -64,110 +67,146 @@
             // lblMain
             // 
             this.lblMain.AutoSize = true;
-            this.lblMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMain.Location = new System.Drawing.Point(84, 29);
+            this.lblMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMain.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
+            this.lblMain.Location = new System.Drawing.Point(145, 23);
             this.lblMain.Name = "lblMain";
-            this.lblMain.Size = new System.Drawing.Size(179, 20);
+            this.lblMain.Size = new System.Drawing.Size(241, 25);
             this.lblMain.TabIndex = 22;
             this.lblMain.Text = "Write Organization Data";
             // 
             // btnAddInfo
             // 
-            this.btnAddInfo.Location = new System.Drawing.Point(881, 26);
+            this.btnAddInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(127)))), ((int)(((byte)(141)))));
+            this.btnAddInfo.FlatAppearance.BorderSize = 0;
+            this.btnAddInfo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAddInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
+            this.btnAddInfo.Location = new System.Drawing.Point(1070, 69);
             this.btnAddInfo.Name = "btnAddInfo";
-            this.btnAddInfo.Size = new System.Drawing.Size(127, 23);
+            this.btnAddInfo.Size = new System.Drawing.Size(128, 32);
             this.btnAddInfo.TabIndex = 21;
-            this.btnAddInfo.Text = "Add Additional Info";
-            this.btnAddInfo.UseVisualStyleBackColor = true;
+            this.btnAddInfo.Text = "Add  Info";
+            this.btnAddInfo.UseVisualStyleBackColor = false;
             this.btnAddInfo.Click += new System.EventHandler(this.btnAddInfo_Click);
             // 
             // btnAddPhoneNumber
             // 
-            this.btnAddPhoneNumber.Location = new System.Drawing.Point(540, 26);
+            this.btnAddPhoneNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(127)))), ((int)(((byte)(141)))));
+            this.btnAddPhoneNumber.FlatAppearance.BorderSize = 0;
+            this.btnAddPhoneNumber.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAddPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddPhoneNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
+            this.btnAddPhoneNumber.Location = new System.Drawing.Point(524, 69);
             this.btnAddPhoneNumber.Name = "btnAddPhoneNumber";
-            this.btnAddPhoneNumber.Size = new System.Drawing.Size(112, 23);
+            this.btnAddPhoneNumber.Size = new System.Drawing.Size(128, 32);
             this.btnAddPhoneNumber.TabIndex = 20;
             this.btnAddPhoneNumber.Text = "Add Phone Nmber";
-            this.btnAddPhoneNumber.UseVisualStyleBackColor = true;
+            this.btnAddPhoneNumber.UseVisualStyleBackColor = false;
             this.btnAddPhoneNumber.Click += new System.EventHandler(this.btnAddPhoneNumber_Click);
             // 
             // lbAdditionalInfo
             // 
+            this.lbAdditionalInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
+            this.lbAdditionalInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAdditionalInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
             this.lbAdditionalInfo.FormattingEnabled = true;
-            this.lbAdditionalInfo.Location = new System.Drawing.Point(669, 55);
+            this.lbAdditionalInfo.ItemHeight = 20;
+            this.lbAdditionalInfo.Location = new System.Drawing.Point(767, 107);
             this.lbAdditionalInfo.Name = "lbAdditionalInfo";
-            this.lbAdditionalInfo.Size = new System.Drawing.Size(339, 225);
+            this.lbAdditionalInfo.Size = new System.Drawing.Size(431, 184);
             this.lbAdditionalInfo.TabIndex = 19;
             this.lbAdditionalInfo.DoubleClick += new System.EventHandler(this.EditInfoItem);
             // 
             // txtbxProfile
             // 
-            this.txtbxProfile.Location = new System.Drawing.Point(187, 470);
+            this.txtbxProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(187)))), ((int)(((byte)(190)))));
+            this.txtbxProfile.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtbxProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbxProfile.Location = new System.Drawing.Point(108, 467);
             this.txtbxProfile.MaxLength = 200;
             this.txtbxProfile.Multiline = true;
             this.txtbxProfile.Name = "txtbxProfile";
-            this.txtbxProfile.Size = new System.Drawing.Size(189, 44);
+            this.txtbxProfile.Size = new System.Drawing.Size(257, 56);
             this.txtbxProfile.TabIndex = 18;
             // 
             // txtbxLocation
             // 
-            this.txtbxLocation.Location = new System.Drawing.Point(187, 357);
+            this.txtbxLocation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(187)))), ((int)(((byte)(190)))));
+            this.txtbxLocation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtbxLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbxLocation.Location = new System.Drawing.Point(108, 367);
             this.txtbxLocation.MaxLength = 200;
             this.txtbxLocation.Multiline = true;
             this.txtbxLocation.Name = "txtbxLocation";
-            this.txtbxLocation.Size = new System.Drawing.Size(189, 51);
+            this.txtbxLocation.Size = new System.Drawing.Size(257, 61);
             this.txtbxLocation.TabIndex = 17;
             // 
             // txtbxName
             // 
-            this.txtbxName.Location = new System.Drawing.Point(187, 273);
+            this.txtbxName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(187)))), ((int)(((byte)(190)))));
+            this.txtbxName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtbxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbxName.Location = new System.Drawing.Point(108, 293);
             this.txtbxName.MaxLength = 50;
             this.txtbxName.Name = "txtbxName";
-            this.txtbxName.Size = new System.Drawing.Size(189, 20);
+            this.txtbxName.Size = new System.Drawing.Size(257, 26);
             this.txtbxName.TabIndex = 16;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(41, 485);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
+            this.label3.Location = new System.Drawing.Point(16, 484);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 13);
+            this.label3.Size = new System.Drawing.Size(61, 20);
             this.label3.TabIndex = 15;
-            this.label3.Text = "Organization Profile:";
+            this.label3.Text = " Profile:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(41, 375);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
+            this.label2.Location = new System.Drawing.Point(16, 384);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 13);
+            this.label2.Size = new System.Drawing.Size(74, 20);
             this.label2.TabIndex = 14;
-            this.label2.Text = "Organization Location:";
+            this.label2.Text = "Location:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(41, 273);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
+            this.label1.Location = new System.Drawing.Point(16, 297);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 13);
+            this.label1.Size = new System.Drawing.Size(55, 20);
             this.label1.TabIndex = 13;
-            this.label1.Text = "Organization Name:";
+            this.label1.Text = "Name:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // lbPhoneNumbers
             // 
+            this.lbPhoneNumbers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
+            this.lbPhoneNumbers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPhoneNumbers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
             this.lbPhoneNumbers.FormattingEnabled = true;
-            this.lbPhoneNumbers.Location = new System.Drawing.Point(417, 55);
+            this.lbPhoneNumbers.ItemHeight = 20;
+            this.lbPhoneNumbers.Location = new System.Drawing.Point(417, 107);
             this.lbPhoneNumbers.Name = "lbPhoneNumbers";
-            this.lbPhoneNumbers.Size = new System.Drawing.Size(235, 498);
+            this.lbPhoneNumbers.Size = new System.Drawing.Size(321, 444);
             this.lbPhoneNumbers.TabIndex = 12;
             this.lbPhoneNumbers.DoubleClick += new System.EventHandler(this.EditPhoneNumberItem);
             // 
             // btnRemoveOrganization
             // 
             this.btnRemoveOrganization.BackColor = System.Drawing.Color.Red;
+            this.btnRemoveOrganization.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRemoveOrganization.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemoveOrganization.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnRemoveOrganization.Location = new System.Drawing.Point(590, 580);
+            this.btnRemoveOrganization.ForeColor = System.Drawing.Color.White;
+            this.btnRemoveOrganization.Location = new System.Drawing.Point(787, 580);
             this.btnRemoveOrganization.Name = "btnRemoveOrganization";
             this.btnRemoveOrganization.Size = new System.Drawing.Size(200, 42);
             this.btnRemoveOrganization.TabIndex = 24;
@@ -178,47 +217,63 @@
             // 
             // pbOrgPhoto
             // 
-            this.pbOrgPhoto.Location = new System.Drawing.Point(187, 78);
+            this.pbOrgPhoto.Location = new System.Drawing.Point(153, 103);
             this.pbOrgPhoto.Name = "pbOrgPhoto";
-            this.pbOrgPhoto.Size = new System.Drawing.Size(175, 127);
+            this.pbOrgPhoto.Size = new System.Drawing.Size(189, 132);
             this.pbOrgPhoto.TabIndex = 25;
             this.pbOrgPhoto.TabStop = false;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(69, 96);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
+            this.label4.Location = new System.Drawing.Point(16, 124);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 13);
+            this.label4.Size = new System.Drawing.Size(55, 20);
             this.label4.TabIndex = 26;
             this.label4.Text = "Photo:";
             // 
             // btnBrowsePhoto
             // 
-            this.btnBrowsePhoto.Location = new System.Drawing.Point(47, 145);
+            this.btnBrowsePhoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(127)))), ((int)(((byte)(141)))));
+            this.btnBrowsePhoto.FlatAppearance.BorderSize = 0;
+            this.btnBrowsePhoto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBrowsePhoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBrowsePhoto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
+            this.btnBrowsePhoto.Location = new System.Drawing.Point(10, 162);
             this.btnBrowsePhoto.Name = "btnBrowsePhoto";
-            this.btnBrowsePhoto.Size = new System.Drawing.Size(95, 23);
+            this.btnBrowsePhoto.Size = new System.Drawing.Size(128, 32);
             this.btnBrowsePhoto.TabIndex = 27;
             this.btnBrowsePhoto.Text = "Browse Photo";
-            this.btnBrowsePhoto.UseVisualStyleBackColor = true;
+            this.btnBrowsePhoto.UseVisualStyleBackColor = false;
             this.btnBrowsePhoto.Click += new System.EventHandler(this.btnBrowsePhoto_Click);
             // 
             // btnAddFile
             // 
-            this.btnAddFile.Location = new System.Drawing.Point(881, 308);
+            this.btnAddFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(127)))), ((int)(((byte)(141)))));
+            this.btnAddFile.FlatAppearance.BorderSize = 0;
+            this.btnAddFile.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAddFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
+            this.btnAddFile.Location = new System.Drawing.Point(1070, 329);
             this.btnAddFile.Name = "btnAddFile";
-            this.btnAddFile.Size = new System.Drawing.Size(127, 27);
+            this.btnAddFile.Size = new System.Drawing.Size(128, 32);
             this.btnAddFile.TabIndex = 29;
             this.btnAddFile.Text = "Add File";
-            this.btnAddFile.UseVisualStyleBackColor = true;
+            this.btnAddFile.UseVisualStyleBackColor = false;
             this.btnAddFile.Click += new System.EventHandler(this.btnAddFile_Click);
             // 
             // lbFiles
             // 
+            this.lbFiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
+            this.lbFiles.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFiles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
             this.lbFiles.FormattingEnabled = true;
-            this.lbFiles.Location = new System.Drawing.Point(669, 341);
+            this.lbFiles.ItemHeight = 20;
+            this.lbFiles.Location = new System.Drawing.Point(767, 367);
             this.lbFiles.Name = "lbFiles";
-            this.lbFiles.Size = new System.Drawing.Size(339, 212);
+            this.lbFiles.Size = new System.Drawing.Size(431, 184);
             this.lbFiles.TabIndex = 28;
             this.lbFiles.DoubleClick += new System.EventHandler(this.OpenFileItem);
             // 
@@ -226,7 +281,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1031, 634);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
+            this.ClientSize = new System.Drawing.Size(1210, 634);
             this.Controls.Add(this.btnAddFile);
             this.Controls.Add(this.lbFiles);
             this.Controls.Add(this.btnBrowsePhoto);
@@ -245,6 +301,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbPhoneNumbers);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "OrganizationForm";
             this.Text = "Phone Numbers Dictionary";
             this.Load += new System.EventHandler(this.MainForm_Load);
