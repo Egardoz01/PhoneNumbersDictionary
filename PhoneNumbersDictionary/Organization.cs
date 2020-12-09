@@ -16,6 +16,8 @@ namespace PhoneNumbersDictionary
 
         public string Profile { get; set; }
 
+        public string PhotoPath { get; set; }
+
         public List<PhoneNumber> PhoneNumbers { get; set; }
 
         public List<PhoneNumber> PhoneNumbersToAdd { get; set; }
@@ -32,6 +34,7 @@ namespace PhoneNumbersDictionary
 
         public List<AdditionalInfo> AdditionalInfosToRemove { get; set; }
 
+        
         public Organization()
         {
             PhoneNumbersToAdd = new List<PhoneNumber>();
@@ -48,6 +51,7 @@ namespace PhoneNumbersDictionary
             Name = (string)reader["Name"];
             Profile = (string)reader["Profile"];
             Location = (string)reader["Location"];
+            PhotoPath = (string)reader["Photo"];
         }
 
         public override string ToString()

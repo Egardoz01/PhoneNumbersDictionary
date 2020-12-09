@@ -64,6 +64,7 @@
     </Compile>
     <Compile Include="OrganizationBasicFiltet.cs" />
     <Compile Include="OrganizationFilterByData.cs" />
+    <Compile Include="OrganizationFilterByInfo.cs" />
     <Compile Include="OrganizationForm.cs">
       <SubType>Form</SubType>
     </Compile>

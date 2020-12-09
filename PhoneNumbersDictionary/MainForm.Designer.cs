@@ -50,21 +50,37 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnShowAll = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.label5 = new System.Windows.Forms.Label();
+            this.btnPhoneSearch = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.txtbxPhoneNumber = new System.Windows.Forms.TextBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
             this.rbPhoneCompleteMatch = new System.Windows.Forms.RadioButton();
-            this.btnPhoneSearch = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.txtbxInfoData = new System.Windows.Forms.TextBox();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.label9 = new System.Windows.Forms.Label();
+            this.rbInfoDataComplete = new System.Windows.Forms.RadioButton();
+            this.btnSearchByInfo = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.txtbxInfoType = new System.Windows.Forms.TextBox();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.label7 = new System.Windows.Forms.Label();
+            this.rbInoTypeComlete = new System.Windows.Forms.RadioButton();
+            this.cbPhoneOldNumbers = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox9.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbOrganizations
@@ -79,7 +95,7 @@
             // btnAddOrganization
             // 
             this.btnAddOrganization.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddOrganization.Location = new System.Drawing.Point(820, 542);
+            this.btnAddOrganization.Location = new System.Drawing.Point(853, 564);
             this.btnAddOrganization.Name = "btnAddOrganization";
             this.btnAddOrganization.Size = new System.Drawing.Size(201, 41);
             this.btnAddOrganization.TabIndex = 1;
@@ -287,29 +303,30 @@
             this.groupBox5.Controls.Add(this.label5);
             this.groupBox5.Location = new System.Drawing.Point(732, 13);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(322, 237);
+            this.groupBox5.Size = new System.Drawing.Size(322, 213);
             this.groupBox5.TabIndex = 6;
             this.groupBox5.TabStop = false;
             // 
-            // label5
+            // btnPhoneSearch
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(31, 25);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(193, 21);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Search by hone number";
+            this.btnPhoneSearch.Location = new System.Drawing.Point(198, 184);
+            this.btnPhoneSearch.Name = "btnPhoneSearch";
+            this.btnPhoneSearch.Size = new System.Drawing.Size(118, 23);
+            this.btnPhoneSearch.TabIndex = 11;
+            this.btnPhoneSearch.Text = "Search";
+            this.btnPhoneSearch.UseVisualStyleBackColor = true;
+            this.btnPhoneSearch.Click += new System.EventHandler(this.btnPhoneSearch_Click);
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.cbPhoneOldNumbers);
             this.groupBox6.Controls.Add(this.txtbxPhoneNumber);
             this.groupBox6.Controls.Add(this.radioButton1);
             this.groupBox6.Controls.Add(this.label6);
             this.groupBox6.Controls.Add(this.rbPhoneCompleteMatch);
-            this.groupBox6.Location = new System.Drawing.Point(6, 77);
+            this.groupBox6.Location = new System.Drawing.Point(6, 55);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(310, 97);
+            this.groupBox6.Size = new System.Drawing.Size(310, 123);
             this.groupBox6.TabIndex = 8;
             this.groupBox6.TabStop = false;
             // 
@@ -351,30 +368,163 @@
             this.rbPhoneCompleteMatch.Text = "Complete match";
             this.rbPhoneCompleteMatch.UseVisualStyleBackColor = true;
             // 
-            // btnPhoneSearch
+            // label5
             // 
-            this.btnPhoneSearch.Location = new System.Drawing.Point(198, 194);
-            this.btnPhoneSearch.Name = "btnPhoneSearch";
-            this.btnPhoneSearch.Size = new System.Drawing.Size(118, 23);
-            this.btnPhoneSearch.TabIndex = 11;
-            this.btnPhoneSearch.Text = "Search";
-            this.btnPhoneSearch.UseVisualStyleBackColor = true;
-            this.btnPhoneSearch.Click += new System.EventHandler(this.btnPhoneSearch_Click);
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(31, 25);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(203, 21);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Search by phone number";
             // 
             // groupBox7
             // 
-            this.groupBox7.Location = new System.Drawing.Point(732, 256);
+            this.groupBox7.Controls.Add(this.groupBox9);
+            this.groupBox7.Controls.Add(this.btnSearchByInfo);
+            this.groupBox7.Controls.Add(this.label8);
+            this.groupBox7.Controls.Add(this.groupBox8);
+            this.groupBox7.Location = new System.Drawing.Point(732, 232);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(322, 188);
+            this.groupBox7.Size = new System.Drawing.Size(322, 304);
             this.groupBox7.TabIndex = 7;
             this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "groupBox7";
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.txtbxInfoData);
+            this.groupBox9.Controls.Add(this.radioButton4);
+            this.groupBox9.Controls.Add(this.label9);
+            this.groupBox9.Controls.Add(this.rbInfoDataComplete);
+            this.groupBox9.Location = new System.Drawing.Point(6, 160);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(310, 97);
+            this.groupBox9.TabIndex = 14;
+            this.groupBox9.TabStop = false;
+            // 
+            // txtbxInfoData
+            // 
+            this.txtbxInfoData.Location = new System.Drawing.Point(124, 30);
+            this.txtbxInfoData.Name = "txtbxInfoData";
+            this.txtbxInfoData.Size = new System.Drawing.Size(180, 20);
+            this.txtbxInfoData.TabIndex = 3;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Checked = true;
+            this.radioButton4.Location = new System.Drawing.Point(172, 71);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(100, 17);
+            this.radioButton4.TabIndex = 6;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "Part of the Data";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(26, 34);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(51, 13);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Info Data";
+            // 
+            // rbInfoDataComplete
+            // 
+            this.rbInfoDataComplete.AutoSize = true;
+            this.rbInfoDataComplete.Location = new System.Drawing.Point(37, 71);
+            this.rbInfoDataComplete.Name = "rbInfoDataComplete";
+            this.rbInfoDataComplete.Size = new System.Drawing.Size(101, 17);
+            this.rbInfoDataComplete.TabIndex = 5;
+            this.rbInfoDataComplete.Text = "Complete match";
+            this.rbInfoDataComplete.UseVisualStyleBackColor = true;
+            // 
+            // btnSearchByInfo
+            // 
+            this.btnSearchByInfo.Location = new System.Drawing.Point(192, 275);
+            this.btnSearchByInfo.Name = "btnSearchByInfo";
+            this.btnSearchByInfo.Size = new System.Drawing.Size(118, 23);
+            this.btnSearchByInfo.TabIndex = 14;
+            this.btnSearchByInfo.Text = "Search";
+            this.btnSearchByInfo.UseVisualStyleBackColor = true;
+            this.btnSearchByInfo.Click += new System.EventHandler(this.btnSearchByInfo_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(54, 19);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(203, 21);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "Search by Additional Info";
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.txtbxInfoType);
+            this.groupBox8.Controls.Add(this.radioButton2);
+            this.groupBox8.Controls.Add(this.label7);
+            this.groupBox8.Controls.Add(this.rbInoTypeComlete);
+            this.groupBox8.Location = new System.Drawing.Point(6, 50);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(310, 97);
+            this.groupBox8.TabIndex = 13;
+            this.groupBox8.TabStop = false;
+            // 
+            // txtbxInfoType
+            // 
+            this.txtbxInfoType.Location = new System.Drawing.Point(124, 30);
+            this.txtbxInfoType.Name = "txtbxInfoType";
+            this.txtbxInfoType.Size = new System.Drawing.Size(180, 20);
+            this.txtbxInfoType.TabIndex = 3;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Checked = true;
+            this.radioButton2.Location = new System.Drawing.Point(172, 71);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(101, 17);
+            this.radioButton2.TabIndex = 6;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Part of the Type";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(30, 33);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(52, 13);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Info Type";
+            // 
+            // rbInoTypeComlete
+            // 
+            this.rbInoTypeComlete.AutoSize = true;
+            this.rbInoTypeComlete.Location = new System.Drawing.Point(37, 71);
+            this.rbInoTypeComlete.Name = "rbInoTypeComlete";
+            this.rbInoTypeComlete.Size = new System.Drawing.Size(101, 17);
+            this.rbInoTypeComlete.TabIndex = 5;
+            this.rbInoTypeComlete.Text = "Complete match";
+            this.rbInoTypeComlete.UseVisualStyleBackColor = true;
+            // 
+            // cbPhoneOldNumbers
+            // 
+            this.cbPhoneOldNumbers.AutoSize = true;
+            this.cbPhoneOldNumbers.Location = new System.Drawing.Point(172, 100);
+            this.cbPhoneOldNumbers.Name = "cbPhoneOldNumbers";
+            this.cbPhoneOldNumbers.Size = new System.Drawing.Size(125, 17);
+            this.cbPhoneOldNumbers.TabIndex = 7;
+            this.cbPhoneOldNumbers.Text = "Include Old Numbers";
+            this.cbPhoneOldNumbers.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1087, 595);
+            this.ClientSize = new System.Drawing.Size(1087, 617);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.btnShowAll);
@@ -396,6 +546,12 @@
             this.groupBox5.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -433,5 +589,18 @@
         private System.Windows.Forms.RadioButton rbPhoneCompleteMatch;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.TextBox txtbxInfoData;
+        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.RadioButton rbInfoDataComplete;
+        private System.Windows.Forms.Button btnSearchByInfo;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.TextBox txtbxInfoType;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.RadioButton rbInoTypeComlete;
+        private System.Windows.Forms.CheckBox cbPhoneOldNumbers;
     }
 }

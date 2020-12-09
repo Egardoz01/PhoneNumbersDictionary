@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -74,6 +75,21 @@ namespace PhoneNumbersDictionary
 
         private void FillOrganizationData()
         {
+            db.LoadOrganizationData(org);
+
+            if (File.Exists(org.PhotoPath))
+            {
+                try
+                {
+                    pbOrgPhoto.Image = new Bitmap(org.PhotoPath);
+                    pbOrgPhoto.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error on loading image "+ex.Message);
+                }
+            }
+
             txtbxName.Text = org.Name;
             txtbxProfile.Text = org.Profile;
             txtbxLocation.Text = org.Location;
@@ -250,6 +266,28 @@ namespace PhoneNumbersDictionary
                 MessageBox.Show("Organization " + org.Name + " was successfullyremoved");
                 Close();
             }
+        }
+
+        private void btnBrowsePhoto_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog dlg = new OpenFileDialog())
+            {
+                dlg.Title = "Open Image";
+                dlg.Filter = "Image Files (*.bmp;*.jpg;*.jpeg,*.png)|*.BMP;*.JPG;*.JPEG;*.PNG";
+
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    string localPath = db.copyFileLocally(org, dlg.FileName);
+                    if(pbOrgPhoto.Image!=null)
+                        pbOrgPhoto.Image.Dispose();
+                    pbOrgPhoto.Image = new Bitmap(localPath);
+                    pbOrgPhoto.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                    db.deleteFile(org.PhotoPath);
+                    org.PhotoPath = localPath;
+                }
+            }
+
         }
     }
 }

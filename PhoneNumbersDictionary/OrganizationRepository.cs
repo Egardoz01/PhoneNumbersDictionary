@@ -28,7 +28,7 @@ namespace PhoneNumbersDictionary
         public int Edit(Organization org)
         {
             string query;
-            query = String.Format("UPDATE Organization SET Name ='{0}', Location = '{1}', Profile = '{2}' WHERE Id={3}", org.Name, org.Location, org.Profile,org.Id);
+            query = String.Format("UPDATE Organization SET Name ='{0}', Location = '{1}', Profile = '{2}', Photo='{3}'  WHERE Id={4}", org.Name, org.Location,org.Profile, org.PhotoPath, org.Id);
 
             SqlCommand cmd = new SqlCommand(query, _conn);
 

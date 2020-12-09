@@ -28,18 +28,14 @@ namespace PhoneNumbersDictionary
 
         public int Edit(PhoneNumber phone)
         {
-            string query;
-            query = String.Format("UPDATE PhoneNumber SET PhoneNumber ='{0}', Name = '{1}' WHERE Id={2}", phone.PhoneNumberstr, phone.Name, phone.Id);
-
-            SqlCommand cmd = new SqlCommand(query, _conn);
-
-            return cmd.ExecuteNonQuery();
+            Remove(phone);
+            return Add(phone);
         }
 
         public int Remove(PhoneNumber phone)
         {
             string query;
-            query = String.Format("DELETE FROM PhoneNumber  WHERE Id={0}", phone.Id);
+            query = String.Format("UPDATE PhoneNumber SET Active=0 WHERE Id={0}", phone.Id);
 
             SqlCommand cmd = new SqlCommand(query, _conn);
 
@@ -50,7 +46,7 @@ namespace PhoneNumbersDictionary
         {
             List<PhoneNumber> phones = new List<PhoneNumber>();
 
-            string query = "SELECT * FROM PhoneNumber where OrganizationId="+id;
+            string query = "SELECT * FROM PhoneNumber where Active=1 AND  OrganizationId="+id;
             SqlCommand cmd = new SqlCommand(query, _conn);
             var reader = cmd.ExecuteReader();
 

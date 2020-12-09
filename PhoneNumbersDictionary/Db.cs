@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -111,13 +112,58 @@ namespace PhoneNumbersDictionary
 
             foreach (var org in orgs)
             {
-                org.PhoneNumbers = PhoneNumberRepository.GetPhoneNumbersByOrganizationId(org.Id);
-                org.AdditionalInfos = AdditionalInfoRepository.GetAdditionalInfosByOrganizationId(org.Id);
+               // org.PhoneNumbers = PhoneNumberRepository.GetPhoneNumbersByOrganizationId(org.Id);
+              //  org.AdditionalInfos = AdditionalInfoRepository.GetAdditionalInfosByOrganizationId(org.Id);
             }
 
             return orgs;
         }
 
+        public void LoadOrganizationData(Organization org)
+        {
+            org.PhoneNumbers = PhoneNumberRepository.GetPhoneNumbersByOrganizationId(org.Id);
+            org.AdditionalInfos = AdditionalInfoRepository.GetAdditionalInfosByOrganizationId(org.Id);
+        }
+
+        public string copyFileLocally(Organization org, string path)
+        {
+            try
+            {
+                string newPath;
+                newPath = Directory.GetCurrentDirectory();
+
+                newPath = Path.Combine(newPath, "Files");
+                if (!Directory.Exists(newPath))
+                    Directory.CreateDirectory(newPath);
+                newPath = Path.Combine(newPath, org.Id.ToString());
+                if (!Directory.Exists(newPath))
+                    Directory.CreateDirectory(newPath);
+                newPath = Path.Combine(newPath, Guid.NewGuid().ToString()+ Path.GetExtension(path));
+                File.Copy(path, newPath);
+                return newPath;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Exception on copying file " + ex.Message);
+            }
+            return "";
+        }
+
+        public void deleteFile(string path)
+        {
+            if (File.Exists(path))
+            {
+                try
+                {
+                    File.Delete(path);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Error on deleting file "+ ex.Message);
+                }
+            }
+            
+        }
 
 
         public void RemoveOrganization(Organization org)

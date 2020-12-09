@@ -28,6 +28,7 @@ namespace PhoneNumbersDictionary
             Id = phone.Id;
             Name = phone.Name;
             PhoneNumberstr = phone.PhoneNumberstr;
+            OrganizaionId = phone.OrganizaionId;
         }
         public PhoneNumber(SqlDataReader reader) 
         {

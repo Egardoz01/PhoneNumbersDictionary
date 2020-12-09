@@ -74,6 +74,17 @@ namespace PhoneNumbersDictionary
             OrganizationFilterByPhone filter = new OrganizationFilterByPhone();
             filter.PhoneNumber = txtbxPhoneNumber.Text;
             filter.CompleteMatch = rbPhoneCompleteMatch.Checked;
+            filter.IncludeOldNumbers = cbPhoneOldNumbers.Checked;
+            LoadOrganizationsByFilter(filter);
+        }
+
+        private void btnSearchByInfo_Click(object sender, EventArgs e)
+        {
+            OrganizationFilterByInfo filter = new OrganizationFilterByInfo();
+            filter.InfoData = txtbxInfoData.Text;
+            filter.InfoType = txtbxInfoType.Text;
+            filter.DataCompleteMatch = rbInfoDataComplete.Checked;
+            filter.TypeCompleteMatch = rbInoTypeComlete.Checked;
             LoadOrganizationsByFilter(filter);
         }
     }

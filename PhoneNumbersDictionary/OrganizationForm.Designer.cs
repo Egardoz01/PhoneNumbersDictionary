@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-          
             this.btnAddOrganization = new System.Windows.Forms.Button();
             this.lblMain = new System.Windows.Forms.Label();
             this.btnAddInfo = new System.Windows.Forms.Button();
@@ -43,8 +41,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbPhoneNumbers = new System.Windows.Forms.ListBox();
             this.btnRemoveOrganization = new System.Windows.Forms.Button();
+            this.pbOrgPhoto = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnBrowsePhoto = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pbOrgPhoto)).BeginInit();
             this.SuspendLayout();
-           
             // 
             // btnAddOrganization
             // 
@@ -98,7 +99,7 @@
             // 
             // txtbxProfile
             // 
-            this.txtbxProfile.Location = new System.Drawing.Point(187, 268);
+            this.txtbxProfile.Location = new System.Drawing.Point(187, 413);
             this.txtbxProfile.MaxLength = 200;
             this.txtbxProfile.Multiline = true;
             this.txtbxProfile.Name = "txtbxProfile";
@@ -107,7 +108,7 @@
             // 
             // txtbxLocation
             // 
-            this.txtbxLocation.Location = new System.Drawing.Point(187, 175);
+            this.txtbxLocation.Location = new System.Drawing.Point(187, 320);
             this.txtbxLocation.MaxLength = 200;
             this.txtbxLocation.Multiline = true;
             this.txtbxLocation.Name = "txtbxLocation";
@@ -116,7 +117,7 @@
             // 
             // txtbxName
             // 
-            this.txtbxName.Location = new System.Drawing.Point(187, 100);
+            this.txtbxName.Location = new System.Drawing.Point(187, 245);
             this.txtbxName.MaxLength = 50;
             this.txtbxName.Name = "txtbxName";
             this.txtbxName.Size = new System.Drawing.Size(189, 20);
@@ -125,7 +126,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(41, 283);
+            this.label3.Location = new System.Drawing.Point(41, 428);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(101, 13);
             this.label3.TabIndex = 15;
@@ -134,7 +135,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(41, 193);
+            this.label2.Location = new System.Drawing.Point(41, 338);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(113, 13);
             this.label2.TabIndex = 14;
@@ -143,7 +144,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(41, 100);
+            this.label1.Location = new System.Drawing.Point(41, 245);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 13);
             this.label1.TabIndex = 13;
@@ -171,11 +172,41 @@
             this.btnRemoveOrganization.Visible = false;
             this.btnRemoveOrganization.Click += new System.EventHandler(this.btnRemoveOrganization_Click);
             // 
+            // pictureBox1
+            // 
+            this.pbOrgPhoto.Location = new System.Drawing.Point(187, 100);
+            this.pbOrgPhoto.Name = "pictureBox1";
+            this.pbOrgPhoto.Size = new System.Drawing.Size(175, 127);
+            this.pbOrgPhoto.TabIndex = 25;
+            this.pbOrgPhoto.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(69, 118);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(38, 13);
+            this.label4.TabIndex = 26;
+            this.label4.Text = "Photo:";
+            // 
+            // btnBrowsePhoto
+            // 
+            this.btnBrowsePhoto.Location = new System.Drawing.Point(47, 168);
+            this.btnBrowsePhoto.Name = "btnBrowsePhoto";
+            this.btnBrowsePhoto.Size = new System.Drawing.Size(95, 23);
+            this.btnBrowsePhoto.TabIndex = 27;
+            this.btnBrowsePhoto.Text = "Browse Photo";
+            this.btnBrowsePhoto.UseVisualStyleBackColor = true;
+            this.btnBrowsePhoto.Click += new System.EventHandler(this.btnBrowsePhoto_Click);
+            // 
             // OrganizationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1031, 587);
+            this.Controls.Add(this.btnBrowsePhoto);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.pbOrgPhoto);
             this.Controls.Add(this.btnRemoveOrganization);
             this.Controls.Add(this.btnAddOrganization);
             this.Controls.Add(this.lblMain);
@@ -192,6 +223,7 @@
             this.Name = "OrganizationForm";
             this.Text = "Phone Numbers Dictionary";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbOrgPhoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,6 +244,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox lbPhoneNumbers;
         private System.Windows.Forms.Button btnRemoveOrganization;
+        private System.Windows.Forms.PictureBox pbOrgPhoto;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnBrowsePhoto;
     }
 }
 
