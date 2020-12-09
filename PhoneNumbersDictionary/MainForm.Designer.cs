@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-
-            System.Drawing.Color label_forecolor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202))))); 
-
             this.lbOrganizations = new System.Windows.Forms.ListBox();
             this.btnAddOrganization = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -98,24 +95,26 @@
             // 
             // lbOrganizations
             // 
-            this.lbOrganizations.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.lbOrganizations.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
             this.lbOrganizations.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbOrganizations.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbOrganizations.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbOrganizations.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lbOrganizations.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
             this.lbOrganizations.FormattingEnabled = true;
             this.lbOrganizations.ItemHeight = 17;
-            this.lbOrganizations.Location = new System.Drawing.Point(13, 13);
+            this.lbOrganizations.Location = new System.Drawing.Point(12, 15);
             this.lbOrganizations.Name = "lbOrganizations";
-            this.lbOrganizations.Size = new System.Drawing.Size(337, 444);
+            this.lbOrganizations.Size = new System.Drawing.Size(337, 461);
             this.lbOrganizations.TabIndex = 0;
             this.lbOrganizations.DoubleClick += new System.EventHandler(this.lbOrganizations_DoubleClick);
             // 
             // btnAddOrganization
             // 
-            this.btnAddOrganization.BackColor = System.Drawing.Color.Silver;
+            this.btnAddOrganization.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
+            this.btnAddOrganization.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAddOrganization.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddOrganization.Location = new System.Drawing.Point(122, 529);
+            this.btnAddOrganization.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
+            this.btnAddOrganization.Location = new System.Drawing.Point(1165, 544);
             this.btnAddOrganization.Name = "btnAddOrganization";
             this.btnAddOrganization.Size = new System.Drawing.Size(201, 41);
             this.btnAddOrganization.TabIndex = 1;
@@ -126,7 +125,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.ForeColor = label_forecolor;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.label1.Location = new System.Drawing.Point(7, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 13);
@@ -147,20 +146,27 @@
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(384, 13);
+            this.groupBox1.Location = new System.Drawing.Point(384, 15);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(326, 446);
+            this.groupBox1.Size = new System.Drawing.Size(326, 461);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             // 
             // btnOrgSearch
             // 
-            this.btnOrgSearch.Location = new System.Drawing.Point(178, 408);
+            this.btnOrgSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(127)))), ((int)(((byte)(141)))));
+            this.btnOrgSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnOrgSearch.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(127)))), ((int)(((byte)(141)))));
+            this.btnOrgSearch.FlatAppearance.BorderSize = 10;
+            this.btnOrgSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnOrgSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrgSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
+            this.btnOrgSearch.Location = new System.Drawing.Point(182, 412);
             this.btnOrgSearch.Name = "btnOrgSearch";
-            this.btnOrgSearch.Size = new System.Drawing.Size(118, 23);
+            this.btnOrgSearch.Size = new System.Drawing.Size(128, 32);
             this.btnOrgSearch.TabIndex = 10;
             this.btnOrgSearch.Text = "Search";
-            this.btnOrgSearch.UseVisualStyleBackColor = true;
+            this.btnOrgSearch.UseVisualStyleBackColor = false;
             this.btnOrgSearch.Click += new System.EventHandler(this.btnOrgSearch_Click);
             // 
             // groupBox4
@@ -186,6 +192,7 @@
             // 
             this.tbLocationPart.AutoSize = true;
             this.tbLocationPart.Checked = true;
+            this.tbLocationPart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.tbLocationPart.Location = new System.Drawing.Point(172, 71);
             this.tbLocationPart.Name = "tbLocationPart";
             this.tbLocationPart.Size = new System.Drawing.Size(118, 17);
@@ -197,6 +204,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.label4.Location = new System.Drawing.Point(6, 33);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(110, 13);
@@ -206,6 +214,7 @@
             // rbLocationComplete
             // 
             this.rbLocationComplete.AutoSize = true;
+            this.rbLocationComplete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.rbLocationComplete.Location = new System.Drawing.Point(37, 71);
             this.rbLocationComplete.Name = "rbLocationComplete";
             this.rbLocationComplete.Size = new System.Drawing.Size(101, 17);
@@ -236,7 +245,7 @@
             // 
             this.rbProfilePart.AutoSize = true;
             this.rbProfilePart.Checked = true;
-            this.rbProfilePart.ForeColor = label_forecolor;
+            this.rbProfilePart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.rbProfilePart.Location = new System.Drawing.Point(172, 71);
             this.rbProfilePart.Name = "rbProfilePart";
             this.rbProfilePart.Size = new System.Drawing.Size(106, 17);
@@ -248,7 +257,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.ForeColor = label_forecolor;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.label3.Location = new System.Drawing.Point(6, 33);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 13);
@@ -258,7 +267,7 @@
             // rbProfileComplete
             // 
             this.rbProfileComplete.AutoSize = true;
-            this.rbProfileComplete.ForeColor = label_forecolor;
+            this.rbProfileComplete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.rbProfileComplete.Location = new System.Drawing.Point(37, 71);
             this.rbProfileComplete.Name = "rbProfileComplete";
             this.rbProfileComplete.Size = new System.Drawing.Size(101, 17);
@@ -282,7 +291,7 @@
             // 
             this.rbNamePart.AutoSize = true;
             this.rbNamePart.Checked = true;
-            this.rbNamePart.ForeColor = label_forecolor;
+            this.rbNamePart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.rbNamePart.Location = new System.Drawing.Point(172, 71);
             this.rbNamePart.Name = "rbNamePart";
             this.rbNamePart.Size = new System.Drawing.Size(105, 17);
@@ -294,7 +303,7 @@
             // rbNameComplete
             // 
             this.rbNameComplete.AutoSize = true;
-            this.rbNameComplete.ForeColor = label_forecolor;
+            this.rbNameComplete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.rbNameComplete.Location = new System.Drawing.Point(37, 71);
             this.rbNameComplete.Name = "rbNameComplete";
             this.rbNameComplete.Size = new System.Drawing.Size(101, 17);
@@ -306,7 +315,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = label_forecolor;
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.label2.Location = new System.Drawing.Point(29, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(209, 20);
@@ -315,12 +324,16 @@
             // 
             // btnShowAll
             // 
-            this.btnShowAll.Location = new System.Drawing.Point(251, 465);
+            this.btnShowAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(127)))), ((int)(((byte)(141)))));
+            this.btnShowAll.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnShowAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
+            this.btnShowAll.Location = new System.Drawing.Point(221, 500);
             this.btnShowAll.Name = "btnShowAll";
-            this.btnShowAll.Size = new System.Drawing.Size(99, 29);
+            this.btnShowAll.Size = new System.Drawing.Size(128, 32);
             this.btnShowAll.TabIndex = 5;
             this.btnShowAll.Text = "ShowAll";
-            this.btnShowAll.UseVisualStyleBackColor = true;
+            this.btnShowAll.UseVisualStyleBackColor = false;
             this.btnShowAll.Click += new System.EventHandler(this.btnShowAll_Click);
             // 
             // groupBox5
@@ -328,20 +341,24 @@
             this.groupBox5.Controls.Add(this.btnPhoneSearch);
             this.groupBox5.Controls.Add(this.groupBox6);
             this.groupBox5.Controls.Add(this.label5);
-            this.groupBox5.Location = new System.Drawing.Point(732, 13);
+            this.groupBox5.Location = new System.Drawing.Point(722, 15);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(322, 213);
+            this.groupBox5.Size = new System.Drawing.Size(322, 225);
             this.groupBox5.TabIndex = 6;
             this.groupBox5.TabStop = false;
             // 
             // btnPhoneSearch
             // 
-            this.btnPhoneSearch.Location = new System.Drawing.Point(198, 184);
+            this.btnPhoneSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(127)))), ((int)(((byte)(141)))));
+            this.btnPhoneSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPhoneSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPhoneSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
+            this.btnPhoneSearch.Location = new System.Drawing.Point(175, 184);
             this.btnPhoneSearch.Name = "btnPhoneSearch";
-            this.btnPhoneSearch.Size = new System.Drawing.Size(118, 23);
+            this.btnPhoneSearch.Size = new System.Drawing.Size(128, 32);
             this.btnPhoneSearch.TabIndex = 11;
             this.btnPhoneSearch.Text = "Search";
-            this.btnPhoneSearch.UseVisualStyleBackColor = true;
+            this.btnPhoneSearch.UseVisualStyleBackColor = false;
             this.btnPhoneSearch.Click += new System.EventHandler(this.btnPhoneSearch_Click);
             // 
             // groupBox6
@@ -360,6 +377,7 @@
             // cbPhoneOldNumbers
             // 
             this.cbPhoneOldNumbers.AutoSize = true;
+            this.cbPhoneOldNumbers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.cbPhoneOldNumbers.Location = new System.Drawing.Point(172, 100);
             this.cbPhoneOldNumbers.Name = "cbPhoneOldNumbers";
             this.cbPhoneOldNumbers.Size = new System.Drawing.Size(125, 17);
@@ -378,6 +396,7 @@
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Checked = true;
+            this.radioButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.radioButton1.Location = new System.Drawing.Point(172, 71);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(114, 17);
@@ -389,6 +408,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.label6.Location = new System.Drawing.Point(7, 33);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(75, 13);
@@ -398,6 +418,7 @@
             // rbPhoneCompleteMatch
             // 
             this.rbPhoneCompleteMatch.AutoSize = true;
+            this.rbPhoneCompleteMatch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.rbPhoneCompleteMatch.Location = new System.Drawing.Point(37, 71);
             this.rbPhoneCompleteMatch.Name = "rbPhoneCompleteMatch";
             this.rbPhoneCompleteMatch.Size = new System.Drawing.Size(101, 17);
@@ -409,6 +430,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.label5.Location = new System.Drawing.Point(31, 25);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(203, 21);
@@ -421,9 +443,9 @@
             this.groupBox7.Controls.Add(this.btnSearchByInfo);
             this.groupBox7.Controls.Add(this.label8);
             this.groupBox7.Controls.Add(this.groupBox8);
-            this.groupBox7.Location = new System.Drawing.Point(1069, 13);
+            this.groupBox7.Location = new System.Drawing.Point(1050, 15);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(322, 304);
+            this.groupBox7.Size = new System.Drawing.Size(322, 324);
             this.groupBox7.TabIndex = 7;
             this.groupBox7.TabStop = false;
             // 
@@ -433,7 +455,7 @@
             this.groupBox9.Controls.Add(this.radioButton4);
             this.groupBox9.Controls.Add(this.label9);
             this.groupBox9.Controls.Add(this.rbInfoDataComplete);
-            this.groupBox9.Location = new System.Drawing.Point(6, 160);
+            this.groupBox9.Location = new System.Drawing.Point(6, 158);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(310, 97);
             this.groupBox9.TabIndex = 14;
@@ -450,6 +472,7 @@
             // 
             this.radioButton4.AutoSize = true;
             this.radioButton4.Checked = true;
+            this.radioButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.radioButton4.Location = new System.Drawing.Point(172, 71);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(100, 17);
@@ -461,6 +484,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.label9.Location = new System.Drawing.Point(26, 34);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(51, 13);
@@ -470,6 +494,7 @@
             // rbInfoDataComplete
             // 
             this.rbInfoDataComplete.AutoSize = true;
+            this.rbInfoDataComplete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.rbInfoDataComplete.Location = new System.Drawing.Point(37, 71);
             this.rbInfoDataComplete.Name = "rbInfoDataComplete";
             this.rbInfoDataComplete.Size = new System.Drawing.Size(101, 17);
@@ -479,18 +504,23 @@
             // 
             // btnSearchByInfo
             // 
-            this.btnSearchByInfo.Location = new System.Drawing.Point(192, 275);
+            this.btnSearchByInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(127)))), ((int)(((byte)(141)))));
+            this.btnSearchByInfo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSearchByInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchByInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
+            this.btnSearchByInfo.Location = new System.Drawing.Point(182, 278);
             this.btnSearchByInfo.Name = "btnSearchByInfo";
-            this.btnSearchByInfo.Size = new System.Drawing.Size(118, 23);
+            this.btnSearchByInfo.Size = new System.Drawing.Size(128, 32);
             this.btnSearchByInfo.TabIndex = 14;
             this.btnSearchByInfo.Text = "Search";
-            this.btnSearchByInfo.UseVisualStyleBackColor = true;
+            this.btnSearchByInfo.UseVisualStyleBackColor = false;
             this.btnSearchByInfo.Click += new System.EventHandler(this.btnSearchByInfo_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.label8.Location = new System.Drawing.Point(56, 19);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(203, 21);
@@ -520,6 +550,7 @@
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Checked = true;
+            this.radioButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.radioButton2.Location = new System.Drawing.Point(172, 71);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(101, 17);
@@ -531,6 +562,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.label7.Location = new System.Drawing.Point(30, 33);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 13);
@@ -540,6 +572,7 @@
             // rbInoTypeComlete
             // 
             this.rbInoTypeComlete.AutoSize = true;
+            this.rbInoTypeComlete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.rbInoTypeComlete.Location = new System.Drawing.Point(37, 71);
             this.rbInoTypeComlete.Name = "rbInoTypeComlete";
             this.rbInoTypeComlete.Size = new System.Drawing.Size(101, 17);
@@ -552,20 +585,24 @@
             this.groupBox10.Controls.Add(this.btnSearchByFile);
             this.groupBox10.Controls.Add(this.groupBox11);
             this.groupBox10.Controls.Add(this.label11);
-            this.groupBox10.Location = new System.Drawing.Point(732, 246);
+            this.groupBox10.Location = new System.Drawing.Point(722, 246);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(322, 213);
+            this.groupBox10.Size = new System.Drawing.Size(322, 230);
             this.groupBox10.TabIndex = 12;
             this.groupBox10.TabStop = false;
             // 
             // btnSearchByFile
             // 
-            this.btnSearchByFile.Location = new System.Drawing.Point(198, 184);
+            this.btnSearchByFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(127)))), ((int)(((byte)(141)))));
+            this.btnSearchByFile.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSearchByFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchByFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
+            this.btnSearchByFile.Location = new System.Drawing.Point(175, 184);
             this.btnSearchByFile.Name = "btnSearchByFile";
-            this.btnSearchByFile.Size = new System.Drawing.Size(118, 23);
+            this.btnSearchByFile.Size = new System.Drawing.Size(128, 32);
             this.btnSearchByFile.TabIndex = 11;
             this.btnSearchByFile.Text = "Search";
-            this.btnSearchByFile.UseVisualStyleBackColor = true;
+            this.btnSearchByFile.UseVisualStyleBackColor = false;
             this.btnSearchByFile.Click += new System.EventHandler(this.btnSearchByFile_Click);
             // 
             // groupBox11
@@ -591,6 +628,7 @@
             // 
             this.radioButton3.AutoSize = true;
             this.radioButton3.Checked = true;
+            this.radioButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.radioButton3.Location = new System.Drawing.Point(172, 71);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(105, 17);
@@ -602,6 +640,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.label10.Location = new System.Drawing.Point(26, 33);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(54, 13);
@@ -611,6 +650,7 @@
             // rbFileComleteMatch
             // 
             this.rbFileComleteMatch.AutoSize = true;
+            this.rbFileComleteMatch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.rbFileComleteMatch.Location = new System.Drawing.Point(37, 71);
             this.rbFileComleteMatch.Name = "rbFileComleteMatch";
             this.rbFileComleteMatch.Size = new System.Drawing.Size(101, 17);
@@ -622,6 +662,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.label11.Location = new System.Drawing.Point(31, 25);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(220, 21);
@@ -691,7 +732,6 @@
         private System.Windows.Forms.RadioButton tbLocationPart;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.RadioButton rbLocationComplete;
-        private System.Windows.Forms.Button btnOrgSearch;
         private System.Windows.Forms.Button btnShowAll;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
@@ -724,5 +764,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.RadioButton rbFileComleteMatch;
         private System.Windows.Forms.Label label11;
+        internal System.Windows.Forms.Button btnOrgSearch;
     }
 }
