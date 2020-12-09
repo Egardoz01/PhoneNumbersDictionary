@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+
+            System.Drawing.Color label_forecolor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202))))); 
+
             this.lbOrganizations = new System.Windows.Forms.ListBox();
             this.btnAddOrganization = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,6 +55,7 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.btnPhoneSearch = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.cbPhoneOldNumbers = new System.Windows.Forms.CheckBox();
             this.txtbxPhoneNumber = new System.Windows.Forms.TextBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
@@ -71,7 +75,14 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
             this.rbInoTypeComlete = new System.Windows.Forms.RadioButton();
-            this.cbPhoneOldNumbers = new System.Windows.Forms.CheckBox();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.btnSearchByFile = new System.Windows.Forms.Button();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.txtbxFileName = new System.Windows.Forms.TextBox();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.label10 = new System.Windows.Forms.Label();
+            this.rbFileComleteMatch = new System.Windows.Forms.RadioButton();
+            this.label11 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -81,31 +92,41 @@
             this.groupBox7.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox8.SuspendLayout();
+            this.groupBox10.SuspendLayout();
+            this.groupBox11.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbOrganizations
             // 
+            this.lbOrganizations.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.lbOrganizations.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbOrganizations.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbOrganizations.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbOrganizations.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lbOrganizations.FormattingEnabled = true;
+            this.lbOrganizations.ItemHeight = 17;
             this.lbOrganizations.Location = new System.Drawing.Point(13, 13);
             this.lbOrganizations.Name = "lbOrganizations";
-            this.lbOrganizations.Size = new System.Drawing.Size(310, 446);
+            this.lbOrganizations.Size = new System.Drawing.Size(337, 444);
             this.lbOrganizations.TabIndex = 0;
             this.lbOrganizations.DoubleClick += new System.EventHandler(this.lbOrganizations_DoubleClick);
             // 
             // btnAddOrganization
             // 
+            this.btnAddOrganization.BackColor = System.Drawing.Color.Silver;
             this.btnAddOrganization.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddOrganization.Location = new System.Drawing.Point(853, 564);
+            this.btnAddOrganization.Location = new System.Drawing.Point(122, 529);
             this.btnAddOrganization.Name = "btnAddOrganization";
             this.btnAddOrganization.Size = new System.Drawing.Size(201, 41);
             this.btnAddOrganization.TabIndex = 1;
             this.btnAddOrganization.Text = "AddOrganization";
-            this.btnAddOrganization.UseVisualStyleBackColor = true;
+            this.btnAddOrganization.UseVisualStyleBackColor = false;
             this.btnAddOrganization.Click += new System.EventHandler(this.btnAddOrganization_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = label_forecolor;
             this.label1.Location = new System.Drawing.Point(7, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 13);
@@ -128,7 +149,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(384, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(322, 446);
+            this.groupBox1.Size = new System.Drawing.Size(326, 446);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             // 
@@ -215,6 +236,7 @@
             // 
             this.rbProfilePart.AutoSize = true;
             this.rbProfilePart.Checked = true;
+            this.rbProfilePart.ForeColor = label_forecolor;
             this.rbProfilePart.Location = new System.Drawing.Point(172, 71);
             this.rbProfilePart.Name = "rbProfilePart";
             this.rbProfilePart.Size = new System.Drawing.Size(106, 17);
@@ -226,6 +248,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = label_forecolor;
             this.label3.Location = new System.Drawing.Point(6, 33);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 13);
@@ -235,6 +258,7 @@
             // rbProfileComplete
             // 
             this.rbProfileComplete.AutoSize = true;
+            this.rbProfileComplete.ForeColor = label_forecolor;
             this.rbProfileComplete.Location = new System.Drawing.Point(37, 71);
             this.rbProfileComplete.Name = "rbProfileComplete";
             this.rbProfileComplete.Size = new System.Drawing.Size(101, 17);
@@ -258,6 +282,7 @@
             // 
             this.rbNamePart.AutoSize = true;
             this.rbNamePart.Checked = true;
+            this.rbNamePart.ForeColor = label_forecolor;
             this.rbNamePart.Location = new System.Drawing.Point(172, 71);
             this.rbNamePart.Name = "rbNamePart";
             this.rbNamePart.Size = new System.Drawing.Size(105, 17);
@@ -269,6 +294,7 @@
             // rbNameComplete
             // 
             this.rbNameComplete.AutoSize = true;
+            this.rbNameComplete.ForeColor = label_forecolor;
             this.rbNameComplete.Location = new System.Drawing.Point(37, 71);
             this.rbNameComplete.Name = "rbNameComplete";
             this.rbNameComplete.Size = new System.Drawing.Size(101, 17);
@@ -280,6 +306,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = label_forecolor;
             this.label2.Location = new System.Drawing.Point(29, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(209, 20);
@@ -288,9 +315,9 @@
             // 
             // btnShowAll
             // 
-            this.btnShowAll.Location = new System.Drawing.Point(214, 466);
+            this.btnShowAll.Location = new System.Drawing.Point(251, 465);
             this.btnShowAll.Name = "btnShowAll";
-            this.btnShowAll.Size = new System.Drawing.Size(88, 23);
+            this.btnShowAll.Size = new System.Drawing.Size(99, 29);
             this.btnShowAll.TabIndex = 5;
             this.btnShowAll.Text = "ShowAll";
             this.btnShowAll.UseVisualStyleBackColor = true;
@@ -329,6 +356,16 @@
             this.groupBox6.Size = new System.Drawing.Size(310, 123);
             this.groupBox6.TabIndex = 8;
             this.groupBox6.TabStop = false;
+            // 
+            // cbPhoneOldNumbers
+            // 
+            this.cbPhoneOldNumbers.AutoSize = true;
+            this.cbPhoneOldNumbers.Location = new System.Drawing.Point(172, 100);
+            this.cbPhoneOldNumbers.Name = "cbPhoneOldNumbers";
+            this.cbPhoneOldNumbers.Size = new System.Drawing.Size(125, 17);
+            this.cbPhoneOldNumbers.TabIndex = 7;
+            this.cbPhoneOldNumbers.Text = "Include Old Numbers";
+            this.cbPhoneOldNumbers.UseVisualStyleBackColor = true;
             // 
             // txtbxPhoneNumber
             // 
@@ -384,7 +421,7 @@
             this.groupBox7.Controls.Add(this.btnSearchByInfo);
             this.groupBox7.Controls.Add(this.label8);
             this.groupBox7.Controls.Add(this.groupBox8);
-            this.groupBox7.Location = new System.Drawing.Point(732, 232);
+            this.groupBox7.Location = new System.Drawing.Point(1069, 13);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(322, 304);
             this.groupBox7.TabIndex = 7;
@@ -454,7 +491,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(54, 19);
+            this.label8.Location = new System.Drawing.Point(56, 19);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(203, 21);
             this.label8.TabIndex = 12;
@@ -510,21 +547,94 @@
             this.rbInoTypeComlete.Text = "Complete match";
             this.rbInoTypeComlete.UseVisualStyleBackColor = true;
             // 
-            // cbPhoneOldNumbers
+            // groupBox10
             // 
-            this.cbPhoneOldNumbers.AutoSize = true;
-            this.cbPhoneOldNumbers.Location = new System.Drawing.Point(172, 100);
-            this.cbPhoneOldNumbers.Name = "cbPhoneOldNumbers";
-            this.cbPhoneOldNumbers.Size = new System.Drawing.Size(125, 17);
-            this.cbPhoneOldNumbers.TabIndex = 7;
-            this.cbPhoneOldNumbers.Text = "Include Old Numbers";
-            this.cbPhoneOldNumbers.UseVisualStyleBackColor = true;
+            this.groupBox10.Controls.Add(this.btnSearchByFile);
+            this.groupBox10.Controls.Add(this.groupBox11);
+            this.groupBox10.Controls.Add(this.label11);
+            this.groupBox10.Location = new System.Drawing.Point(732, 246);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(322, 213);
+            this.groupBox10.TabIndex = 12;
+            this.groupBox10.TabStop = false;
+            // 
+            // btnSearchByFile
+            // 
+            this.btnSearchByFile.Location = new System.Drawing.Point(198, 184);
+            this.btnSearchByFile.Name = "btnSearchByFile";
+            this.btnSearchByFile.Size = new System.Drawing.Size(118, 23);
+            this.btnSearchByFile.TabIndex = 11;
+            this.btnSearchByFile.Text = "Search";
+            this.btnSearchByFile.UseVisualStyleBackColor = true;
+            this.btnSearchByFile.Click += new System.EventHandler(this.btnSearchByFile_Click);
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.txtbxFileName);
+            this.groupBox11.Controls.Add(this.radioButton3);
+            this.groupBox11.Controls.Add(this.label10);
+            this.groupBox11.Controls.Add(this.rbFileComleteMatch);
+            this.groupBox11.Location = new System.Drawing.Point(6, 55);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(310, 123);
+            this.groupBox11.TabIndex = 8;
+            this.groupBox11.TabStop = false;
+            // 
+            // txtbxFileName
+            // 
+            this.txtbxFileName.Location = new System.Drawing.Point(124, 30);
+            this.txtbxFileName.Name = "txtbxFileName";
+            this.txtbxFileName.Size = new System.Drawing.Size(180, 20);
+            this.txtbxFileName.TabIndex = 3;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Checked = true;
+            this.radioButton3.Location = new System.Drawing.Point(172, 71);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(105, 17);
+            this.radioButton3.TabIndex = 6;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Part of the Name";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(26, 33);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(54, 13);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "File Name";
+            // 
+            // rbFileComleteMatch
+            // 
+            this.rbFileComleteMatch.AutoSize = true;
+            this.rbFileComleteMatch.Location = new System.Drawing.Point(37, 71);
+            this.rbFileComleteMatch.Name = "rbFileComleteMatch";
+            this.rbFileComleteMatch.Size = new System.Drawing.Size(101, 17);
+            this.rbFileComleteMatch.TabIndex = 5;
+            this.rbFileComleteMatch.Text = "Complete match";
+            this.rbFileComleteMatch.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(31, 25);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(220, 21);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Search by phone File Name";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1087, 617);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
+            this.ClientSize = new System.Drawing.Size(1428, 617);
+            this.Controls.Add(this.groupBox10);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.btnShowAll);
@@ -552,6 +662,10 @@
             this.groupBox9.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -602,5 +716,13 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.RadioButton rbInoTypeComlete;
         private System.Windows.Forms.CheckBox cbPhoneOldNumbers;
+        private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.Button btnSearchByFile;
+        private System.Windows.Forms.GroupBox groupBox11;
+        private System.Windows.Forms.TextBox txtbxFileName;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.RadioButton rbFileComleteMatch;
+        private System.Windows.Forms.Label label11;
     }
 }

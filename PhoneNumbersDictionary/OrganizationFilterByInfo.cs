@@ -15,7 +15,7 @@ namespace PhoneNumbersDictionary
 
         public string GetQuery()
         {
-            string query = "SELECT DISTINCT Organization.Id, Organization.Name, Organization.Location, Organization.Profile FROM Organization,AdditionalInfo WHERE Organization.Id = AdditionalInfo.OrganizationId AND AdditionalInfo.InfoType ";
+            string query = "SELECT DISTINCT Organization.Id, Organization.Name, Organization.Location, Organization.Profile, Organization.Photo FROM Organization,AdditionalInfo WHERE Organization.Id = AdditionalInfo.OrganizationId AND AdditionalInfo.InfoType ";
             if (TypeCompleteMatch)
                 query += "= '" + InfoType + "' ";
             else

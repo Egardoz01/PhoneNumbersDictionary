@@ -63,6 +63,9 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="OrganizationBasicFiltet.cs" />
+    <Compile Include="OrganizationFile.cs" />
+    <Compile Include="OrganizationFilerByFile.cs" />
+    <Compile Include="OrganizationFilesRepositiry.cs" />
     <Compile Include="OrganizationFilterByData.cs" />
     <Compile Include="OrganizationFilterByInfo.cs" />
     <Compile Include="OrganizationForm.cs">

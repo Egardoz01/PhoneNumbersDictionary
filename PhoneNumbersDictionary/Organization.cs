@@ -34,7 +34,12 @@ namespace PhoneNumbersDictionary
 
         public List<AdditionalInfo> AdditionalInfosToRemove { get; set; }
 
-        
+        public List<OrganizationFile> OrganizationFiles { get; set; }
+
+        public List<OrganizationFile> OrganizationFilesToAdd { get; set; }
+
+        public List<OrganizationFile> OrganizationFilesToRemove { get; set; }
+
         public Organization()
         {
             PhoneNumbersToAdd = new List<PhoneNumber>();
@@ -43,6 +48,9 @@ namespace PhoneNumbersDictionary
             AdditionalInfosToAdd = new List<AdditionalInfo>();
             AdditionalInfosToRemove = new List<AdditionalInfo>();
             AdditionalInfosToEdit = new List<AdditionalInfo>();
+            OrganizationFiles = new List<OrganizationFile>();
+            OrganizationFilesToAdd = new List<OrganizationFile>();
+            OrganizationFilesToRemove = new List<OrganizationFile>();
         }
 
         public Organization(SqlDataReader reader) :this()

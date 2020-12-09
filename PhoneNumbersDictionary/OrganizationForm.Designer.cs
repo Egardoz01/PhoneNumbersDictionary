@@ -44,6 +44,8 @@
             this.pbOrgPhoto = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnBrowsePhoto = new System.Windows.Forms.Button();
+            this.btnAddFile = new System.Windows.Forms.Button();
+            this.lbFiles = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbOrgPhoto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +53,7 @@
             // 
             this.btnAddOrganization.BackColor = System.Drawing.Color.DarkGray;
             this.btnAddOrganization.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddOrganization.Location = new System.Drawing.Point(824, 504);
+            this.btnAddOrganization.Location = new System.Drawing.Point(835, 580);
             this.btnAddOrganization.Name = "btnAddOrganization";
             this.btnAddOrganization.Size = new System.Drawing.Size(166, 42);
             this.btnAddOrganization.TabIndex = 23;
@@ -63,7 +65,7 @@
             // 
             this.lblMain.AutoSize = true;
             this.lblMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMain.Location = new System.Drawing.Point(183, 40);
+            this.lblMain.Location = new System.Drawing.Point(84, 29);
             this.lblMain.Name = "lblMain";
             this.lblMain.Size = new System.Drawing.Size(179, 20);
             this.lblMain.TabIndex = 22;
@@ -71,9 +73,9 @@
             // 
             // btnAddInfo
             // 
-            this.btnAddInfo.Location = new System.Drawing.Point(881, 71);
+            this.btnAddInfo.Location = new System.Drawing.Point(881, 26);
             this.btnAddInfo.Name = "btnAddInfo";
-            this.btnAddInfo.Size = new System.Drawing.Size(109, 23);
+            this.btnAddInfo.Size = new System.Drawing.Size(127, 23);
             this.btnAddInfo.TabIndex = 21;
             this.btnAddInfo.Text = "Add Additional Info";
             this.btnAddInfo.UseVisualStyleBackColor = true;
@@ -81,9 +83,9 @@
             // 
             // btnAddPhoneNumber
             // 
-            this.btnAddPhoneNumber.Location = new System.Drawing.Point(528, 71);
+            this.btnAddPhoneNumber.Location = new System.Drawing.Point(540, 26);
             this.btnAddPhoneNumber.Name = "btnAddPhoneNumber";
-            this.btnAddPhoneNumber.Size = new System.Drawing.Size(106, 23);
+            this.btnAddPhoneNumber.Size = new System.Drawing.Size(112, 23);
             this.btnAddPhoneNumber.TabIndex = 20;
             this.btnAddPhoneNumber.Text = "Add Phone Nmber";
             this.btnAddPhoneNumber.UseVisualStyleBackColor = true;
@@ -92,14 +94,15 @@
             // lbAdditionalInfo
             // 
             this.lbAdditionalInfo.FormattingEnabled = true;
-            this.lbAdditionalInfo.Location = new System.Drawing.Point(669, 100);
+            this.lbAdditionalInfo.Location = new System.Drawing.Point(669, 55);
             this.lbAdditionalInfo.Name = "lbAdditionalInfo";
-            this.lbAdditionalInfo.Size = new System.Drawing.Size(321, 212);
+            this.lbAdditionalInfo.Size = new System.Drawing.Size(339, 225);
             this.lbAdditionalInfo.TabIndex = 19;
+            this.lbAdditionalInfo.DoubleClick += new System.EventHandler(this.EditInfoItem);
             // 
             // txtbxProfile
             // 
-            this.txtbxProfile.Location = new System.Drawing.Point(187, 413);
+            this.txtbxProfile.Location = new System.Drawing.Point(187, 470);
             this.txtbxProfile.MaxLength = 200;
             this.txtbxProfile.Multiline = true;
             this.txtbxProfile.Name = "txtbxProfile";
@@ -108,7 +111,7 @@
             // 
             // txtbxLocation
             // 
-            this.txtbxLocation.Location = new System.Drawing.Point(187, 320);
+            this.txtbxLocation.Location = new System.Drawing.Point(187, 357);
             this.txtbxLocation.MaxLength = 200;
             this.txtbxLocation.Multiline = true;
             this.txtbxLocation.Name = "txtbxLocation";
@@ -117,7 +120,7 @@
             // 
             // txtbxName
             // 
-            this.txtbxName.Location = new System.Drawing.Point(187, 245);
+            this.txtbxName.Location = new System.Drawing.Point(187, 273);
             this.txtbxName.MaxLength = 50;
             this.txtbxName.Name = "txtbxName";
             this.txtbxName.Size = new System.Drawing.Size(189, 20);
@@ -126,7 +129,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(41, 428);
+            this.label3.Location = new System.Drawing.Point(41, 485);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(101, 13);
             this.label3.TabIndex = 15;
@@ -135,7 +138,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(41, 338);
+            this.label2.Location = new System.Drawing.Point(41, 375);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(113, 13);
             this.label2.TabIndex = 14;
@@ -144,7 +147,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(41, 245);
+            this.label1.Location = new System.Drawing.Point(41, 273);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 13);
             this.label1.TabIndex = 13;
@@ -153,17 +156,18 @@
             // lbPhoneNumbers
             // 
             this.lbPhoneNumbers.FormattingEnabled = true;
-            this.lbPhoneNumbers.Location = new System.Drawing.Point(406, 100);
+            this.lbPhoneNumbers.Location = new System.Drawing.Point(417, 55);
             this.lbPhoneNumbers.Name = "lbPhoneNumbers";
-            this.lbPhoneNumbers.Size = new System.Drawing.Size(228, 212);
+            this.lbPhoneNumbers.Size = new System.Drawing.Size(235, 498);
             this.lbPhoneNumbers.TabIndex = 12;
+            this.lbPhoneNumbers.DoubleClick += new System.EventHandler(this.EditPhoneNumberItem);
             // 
             // btnRemoveOrganization
             // 
             this.btnRemoveOrganization.BackColor = System.Drawing.Color.Red;
             this.btnRemoveOrganization.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoveOrganization.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnRemoveOrganization.Location = new System.Drawing.Point(588, 504);
+            this.btnRemoveOrganization.Location = new System.Drawing.Point(590, 580);
             this.btnRemoveOrganization.Name = "btnRemoveOrganization";
             this.btnRemoveOrganization.Size = new System.Drawing.Size(200, 42);
             this.btnRemoveOrganization.TabIndex = 24;
@@ -172,10 +176,10 @@
             this.btnRemoveOrganization.Visible = false;
             this.btnRemoveOrganization.Click += new System.EventHandler(this.btnRemoveOrganization_Click);
             // 
-            // pictureBox1
+            // pbOrgPhoto
             // 
-            this.pbOrgPhoto.Location = new System.Drawing.Point(187, 100);
-            this.pbOrgPhoto.Name = "pictureBox1";
+            this.pbOrgPhoto.Location = new System.Drawing.Point(187, 78);
+            this.pbOrgPhoto.Name = "pbOrgPhoto";
             this.pbOrgPhoto.Size = new System.Drawing.Size(175, 127);
             this.pbOrgPhoto.TabIndex = 25;
             this.pbOrgPhoto.TabStop = false;
@@ -183,7 +187,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(69, 118);
+            this.label4.Location = new System.Drawing.Point(69, 96);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 13);
             this.label4.TabIndex = 26;
@@ -191,7 +195,7 @@
             // 
             // btnBrowsePhoto
             // 
-            this.btnBrowsePhoto.Location = new System.Drawing.Point(47, 168);
+            this.btnBrowsePhoto.Location = new System.Drawing.Point(47, 145);
             this.btnBrowsePhoto.Name = "btnBrowsePhoto";
             this.btnBrowsePhoto.Size = new System.Drawing.Size(95, 23);
             this.btnBrowsePhoto.TabIndex = 27;
@@ -199,11 +203,32 @@
             this.btnBrowsePhoto.UseVisualStyleBackColor = true;
             this.btnBrowsePhoto.Click += new System.EventHandler(this.btnBrowsePhoto_Click);
             // 
+            // btnAddFile
+            // 
+            this.btnAddFile.Location = new System.Drawing.Point(881, 308);
+            this.btnAddFile.Name = "btnAddFile";
+            this.btnAddFile.Size = new System.Drawing.Size(127, 27);
+            this.btnAddFile.TabIndex = 29;
+            this.btnAddFile.Text = "Add File";
+            this.btnAddFile.UseVisualStyleBackColor = true;
+            this.btnAddFile.Click += new System.EventHandler(this.btnAddFile_Click);
+            // 
+            // lbFiles
+            // 
+            this.lbFiles.FormattingEnabled = true;
+            this.lbFiles.Location = new System.Drawing.Point(669, 341);
+            this.lbFiles.Name = "lbFiles";
+            this.lbFiles.Size = new System.Drawing.Size(339, 212);
+            this.lbFiles.TabIndex = 28;
+            this.lbFiles.DoubleClick += new System.EventHandler(this.OpenFileItem);
+            // 
             // OrganizationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1031, 587);
+            this.ClientSize = new System.Drawing.Size(1031, 634);
+            this.Controls.Add(this.btnAddFile);
+            this.Controls.Add(this.lbFiles);
             this.Controls.Add(this.btnBrowsePhoto);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pbOrgPhoto);
@@ -247,6 +272,8 @@
         private System.Windows.Forms.PictureBox pbOrgPhoto;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnBrowsePhoto;
+        private System.Windows.Forms.Button btnAddFile;
+        private System.Windows.Forms.ListBox lbFiles;
     }
 }
 

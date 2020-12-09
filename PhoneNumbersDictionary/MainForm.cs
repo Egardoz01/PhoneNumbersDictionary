@@ -87,5 +87,14 @@ namespace PhoneNumbersDictionary
             filter.TypeCompleteMatch = rbInoTypeComlete.Checked;
             LoadOrganizationsByFilter(filter);
         }
+
+        private void btnSearchByFile_Click(object sender, EventArgs e)
+        {
+            OrganizationFilerByFile filter = new OrganizationFilerByFile();
+            filter.Filename = txtbxFileName.Text;
+            filter.FilenameCompleteMatch = rbFileComleteMatch.Checked;
+
+            LoadOrganizationsByFilter(filter);
+        }
     }
 }

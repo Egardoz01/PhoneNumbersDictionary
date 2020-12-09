@@ -14,7 +14,7 @@ namespace PhoneNumbersDictionary
         public SqlConnection _conn { get; private set; }
         public OrganizationRepository OrganizationRepository { get; private set; }
         public PhoneNumberRepository PhoneNumberRepository { get; private set; }
-
+        public OrganizationFilesRepositiry OrganizationFilesRepositiry { get; private set; }
         public AdditionalInfoRepository AdditionalInfoRepository { get; private set; }
         public Db()
         {
@@ -22,6 +22,7 @@ namespace PhoneNumbersDictionary
             OrganizationRepository = new OrganizationRepository(_conn);
             PhoneNumberRepository = new PhoneNumberRepository(_conn);
             AdditionalInfoRepository = new AdditionalInfoRepository(_conn);
+            OrganizationFilesRepositiry = new OrganizationFilesRepositiry(_conn);
         }
         private static string GetConnectionString()
         {
@@ -64,6 +65,12 @@ namespace PhoneNumbersDictionary
                 info.OrganizaionId = id;
                 AdditionalInfoRepository.Add(info);
             }
+
+            foreach (var file in org.OrganizationFilesToAdd)
+            {
+                file.OrganizaionId = id;
+                OrganizationFilesRepositiry.Add(file);
+            }
         }
 
         public void EditOrganization(Organization org)
@@ -103,6 +110,20 @@ namespace PhoneNumbersDictionary
                 AdditionalInfoRepository.Remove(info);
             }
 
+            foreach (var file in org.OrganizationFilesToAdd)
+            {
+                file.OrganizaionId = id;
+                OrganizationFilesRepositiry.Add(file);
+            }
+
+            foreach (var file in org.OrganizationFilesToRemove)
+            {
+
+                deleteFile(file.Path);
+                OrganizationFilesRepositiry.Remove(file);
+                
+            }
+
         }
 
 
@@ -110,11 +131,6 @@ namespace PhoneNumbersDictionary
         {
             List<Organization> orgs = OrganizationRepository.GetOrganizations(filter.GetQuery());
 
-            foreach (var org in orgs)
-            {
-               // org.PhoneNumbers = PhoneNumberRepository.GetPhoneNumbersByOrganizationId(org.Id);
-              //  org.AdditionalInfos = AdditionalInfoRepository.GetAdditionalInfosByOrganizationId(org.Id);
-            }
 
             return orgs;
         }
@@ -123,6 +139,7 @@ namespace PhoneNumbersDictionary
         {
             org.PhoneNumbers = PhoneNumberRepository.GetPhoneNumbersByOrganizationId(org.Id);
             org.AdditionalInfos = AdditionalInfoRepository.GetAdditionalInfosByOrganizationId(org.Id);
+            org.OrganizationFiles = OrganizationFilesRepositiry.GetFilesByOrganizationId(org.Id);
         }
 
         public string copyFileLocally(Organization org, string path)
@@ -173,6 +190,10 @@ namespace PhoneNumbersDictionary
             cmd.ExecuteNonQuery();
            
             query = "DELETE FROM AdditionalInfo where OrganizationId=" + org.Id;
+            cmd = new SqlCommand(query, _conn);
+            cmd.ExecuteNonQuery();
+
+            query = "DELETE FROM OrganizationFile where OrganizationId=" + org.Id;
             cmd = new SqlCommand(query, _conn);
             cmd.ExecuteNonQuery();
 

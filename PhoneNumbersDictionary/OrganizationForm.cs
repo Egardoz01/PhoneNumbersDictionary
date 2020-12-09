@@ -64,10 +64,20 @@ namespace PhoneNumbersDictionary
             removeItem2.Text = "Remove";
             removeItem2.Click += new EventHandler(RemoveInfoItem);
 
+            ContextMenu menu_file = new ContextMenu();
 
-            menu_info.MenuItems.Add(editItem2);
-            menu_info.MenuItems.Add(removeItem2);
-            lbAdditionalInfo.ContextMenu = menu_info;
+            MenuItem openItem = new MenuItem();
+            openItem.Text = "Open";
+            openItem.Click += new EventHandler(OpenFileItem);
+
+            MenuItem removeItem3 = new MenuItem();
+            removeItem3.Text = "Remove";
+            removeItem3.Click += new EventHandler(RemoveFileItem);
+
+
+            menu_file.MenuItems.Add(openItem);
+            menu_file.MenuItems.Add(removeItem3);
+            lbFiles.ContextMenu = menu_file;
 
 
 
@@ -101,6 +111,10 @@ namespace PhoneNumbersDictionary
             foreach (var info in org.AdditionalInfos)
             {
                 lbAdditionalInfo.Items.Add(info);
+            }
+            foreach (var file in org.OrganizationFiles)
+            {
+                lbFiles.Items.Add(file);
             }
 
         }
@@ -253,6 +267,50 @@ namespace PhoneNumbersDictionary
             }
         }
 
+        private void RemoveFileItem(object sender, EventArgs e)
+        {
+            OrganizationFile file = (OrganizationFile)lbFiles.SelectedItem;
+            if (file != null)
+            {
+                var result = MessageBox.Show("Do you really want to remove selected File?", "Remove Organization File",
+                               MessageBoxButtons.YesNo,
+                               MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    lbFiles.Items.Remove(file);
+                  
+                    var item = org.OrganizationFilesToAdd.FirstOrDefault(p => p.Path == file.Path);
+                    if (item != null)
+                        org.OrganizationFilesToAdd.Remove(item);
+                    if (org.Id != 0)
+                        org.OrganizationFilesToRemove.Add(file);
+                }
+            }
+        }
+
+        private void OpenFileItem(object sender, EventArgs e)
+        {
+            OrganizationFile file = (OrganizationFile)lbFiles.SelectedItem;
+            if (file != null)
+            {
+                if (File.Exists(file.Path))
+                {
+                    try
+                    {
+                        System.Diagnostics.Process.Start(file.Path);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error on opening the file "+ ex.Message);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("File not found");
+                }
+            }
+        }
+
 
         private void btnRemoveOrganization_Click(object sender, EventArgs e)
         {
@@ -288,6 +346,25 @@ namespace PhoneNumbersDictionary
                 }
             }
 
+        }
+
+        private void btnAddFile_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog dlg = new OpenFileDialog())
+            {
+                dlg.Title = "Add FIle";
+               
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    string localPath = db.copyFileLocally(org, dlg.FileName);
+
+                    OrganizationFile file = new OrganizationFile();
+                    file.Name = Path.GetFileName(dlg.FileName);
+                    file.Path = localPath;
+                    org.OrganizationFilesToAdd.Add(file);
+                    lbFiles.Items.Add(file);
+                }
+            }
         }
     }
 }
