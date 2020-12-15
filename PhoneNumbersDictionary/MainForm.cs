@@ -12,7 +12,9 @@ namespace PhoneNumbersDictionary
 {
     public partial class MainForm : Form
     {
-        private readonly Db db; 
+        private readonly Db db;
+        private int pageSize;
+        private int curPage;
         public MainForm()
         {
             InitializeComponent();
@@ -29,14 +31,21 @@ namespace PhoneNumbersDictionary
 
         private void LoadAllOrganizations()
         {
-            lbOrganizations.Items.Clear();
-            lbOrganizations.Items.AddRange(db.GetOrganizations(new OrganizationBasicFilter()).ToArray());
+            LoadOrganizationsByFilter(new OrganizationBasicFilter());
         }
         private void LoadOrganizationsByFilter(IOrganizationFilter filter)
         {
+
+            pageSize = int.Parse(txtbxPageSIze.Text);
+
             lbOrganizations.Items.Clear();
-            lbOrganizations.Items.AddRange(db.GetOrganizations(filter).ToArray());
+            lbOrganizations.Items.AddRange(db.GetOrganizations(filter, 0, pageSize).ToArray());
+
+            lblOrgCount.Text = String.Format("По вашему запросу найдено {1} организаций", lbOrganizations.Items.Count, db.GetOrganizationsCount(filter));
         }
+
+
+        
 
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -97,6 +106,16 @@ namespace PhoneNumbersDictionary
             LoadOrganizationsByFilter(filter);
         }
 
-       
+        private void txtbxPageSIze_Leave(object sender, EventArgs e)
+        {
+            int temp;
+            if (!int.TryParse(txtbxPageSIze.Text, out temp))
+            {
+                MessageBox.Show("Вводимое значение должно быть числом");
+                txtbxPageSIze.Focus();
+            }
+            
+
+        }
     }
 }

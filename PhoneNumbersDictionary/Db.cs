@@ -121,18 +121,24 @@ namespace PhoneNumbersDictionary
 
                 deleteFile(file.Path);
                 OrganizationFilesRepositiry.Remove(file);
-                
+
             }
 
         }
 
 
-        public List<Organization> GetOrganizations(IOrganizationFilter filter)
+        public List<Organization> GetOrganizations(IOrganizationFilter filter, int offset=0,  int limit=100)
         {
-            List<Organization> orgs = OrganizationRepository.GetOrganizations(filter.GetSelectQuery());
-
+            List<Organization> orgs = OrganizationRepository.GetOrganizations(filter.GetSelectQuery() + " ORDER BY Id  OFFSET "+ offset + " ROWS FETCH NEXT "+limit+" ROWS ONLY;");
 
             return orgs;
+        }
+
+        public int GetOrganizationsCount(IOrganizationFilter filter)
+        {
+            SqlCommand cmd = new SqlCommand(filter.GetCountQuery(), _conn);
+
+            return (int)cmd.ExecuteScalar();
         }
 
         public void LoadOrganizationData(Organization org)

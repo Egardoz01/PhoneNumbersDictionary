@@ -70,6 +70,11 @@
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.rbFileComleteMatch = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblOrgCount = new System.Windows.Forms.Label();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.txtbxPageSIze = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblCurPage = new System.Windows.Forms.Label();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -81,6 +86,7 @@
             this.groupBox10.SuspendLayout();
             this.groupBox11.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox12.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbOrganizations
@@ -104,7 +110,7 @@
             this.btnAddOrganization.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAddOrganization.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddOrganization.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
-            this.btnAddOrganization.Location = new System.Drawing.Point(12, 507);
+            this.btnAddOrganization.Location = new System.Drawing.Point(12, 694);
             this.btnAddOrganization.Name = "btnAddOrganization";
             this.btnAddOrganization.Size = new System.Drawing.Size(201, 73);
             this.btnAddOrganization.TabIndex = 1;
@@ -198,7 +204,6 @@
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Профиль";
-           
             // 
             // txtbxOrgProfile
             // 
@@ -221,7 +226,6 @@
             this.rbProfilePart.TabStop = true;
             this.rbProfilePart.Text = "подстрока";
             this.rbProfilePart.UseVisualStyleBackColor = true;
-           
             // 
             // rbProfileComplete
             // 
@@ -233,7 +237,6 @@
             this.rbProfileComplete.TabIndex = 5;
             this.rbProfileComplete.Text = "полное совпадение";
             this.rbProfileComplete.UseVisualStyleBackColor = true;
-           
             // 
             // groupBox2
             // 
@@ -280,7 +283,7 @@
             this.btnShowAll.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnShowAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
-            this.btnShowAll.Location = new System.Drawing.Point(219, 507);
+            this.btnShowAll.Location = new System.Drawing.Point(219, 694);
             this.btnShowAll.Name = "btnShowAll";
             this.btnShowAll.Size = new System.Drawing.Size(128, 39);
             this.btnShowAll.TabIndex = 5;
@@ -589,12 +592,70 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Поиск по информации об организации";
             // 
+            // lblOrgCount
+            // 
+            this.lblOrgCount.AutoSize = true;
+            this.lblOrgCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrgCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
+            this.lblOrgCount.Location = new System.Drawing.Point(8, 499);
+            this.lblOrgCount.Name = "lblOrgCount";
+            this.lblOrgCount.Size = new System.Drawing.Size(174, 20);
+            this.lblOrgCount.TabIndex = 14;
+            this.lblOrgCount.Text = "найдено организаций";
+            // 
+            // groupBox12
+            // 
+            this.groupBox12.Controls.Add(this.txtbxPageSIze);
+            this.groupBox12.Controls.Add(this.label1);
+            this.groupBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
+            this.groupBox12.Location = new System.Drawing.Point(485, 614);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(332, 151);
+            this.groupBox12.TabIndex = 15;
+            this.groupBox12.TabStop = false;
+            this.groupBox12.Text = "Настройки ";
+            // 
+            // txtbxPageSIze
+            // 
+            this.txtbxPageSIze.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(187)))), ((int)(((byte)(190)))));
+            this.txtbxPageSIze.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtbxPageSIze.Location = new System.Drawing.Point(231, 37);
+            this.txtbxPageSIze.Name = "txtbxPageSIze";
+            this.txtbxPageSIze.Size = new System.Drawing.Size(95, 26);
+            this.txtbxPageSIze.TabIndex = 7;
+            this.txtbxPageSIze.Text = "100";
+            this.txtbxPageSIze.Leave += new System.EventHandler(this.txtbxPageSIze_Leave);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(16, 39);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(209, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Организаций на старнице:";
+            // 
+            // lblCurPage
+            // 
+            this.lblCurPage.AutoSize = true;
+            this.lblCurPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurPage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
+            this.lblCurPage.Location = new System.Drawing.Point(12, 584);
+            this.lblCurPage.Name = "lblCurPage";
+            this.lblCurPage.Size = new System.Drawing.Size(148, 20);
+            this.lblCurPage.TabIndex = 17;
+            this.lblCurPage.Text = "Текущая страница";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
-            this.ClientSize = new System.Drawing.Size(1540, 592);
+            this.ClientSize = new System.Drawing.Size(1283, 789);
+            this.Controls.Add(this.lblCurPage);
+            this.Controls.Add(this.groupBox12);
+            this.Controls.Add(this.lblOrgCount);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox10);
             this.Controls.Add(this.groupBox7);
@@ -624,7 +685,10 @@
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox12.ResumeLayout(false);
+            this.groupBox12.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -671,5 +735,10 @@
         private System.Windows.Forms.RadioButton rbFileComleteMatch;
         internal System.Windows.Forms.Button btnOrgSearch;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label lblOrgCount;
+        private System.Windows.Forms.GroupBox groupBox12;
+        private System.Windows.Forms.TextBox txtbxPageSIze;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblCurPage;
     }
 }
