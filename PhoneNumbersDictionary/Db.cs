@@ -44,7 +44,7 @@ namespace PhoneNumbersDictionary
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Db connection Exception: " + ex.Message);
+                MessageBox.Show("Ошибка при подключении к базе данных: " + ex.Message);
             }
             return _conn;
 
@@ -129,7 +129,7 @@ namespace PhoneNumbersDictionary
 
         public List<Organization> GetOrganizations(IOrganizationFilter filter)
         {
-            List<Organization> orgs = OrganizationRepository.GetOrganizations(filter.GetQuery());
+            List<Organization> orgs = OrganizationRepository.GetOrganizations(filter.GetSelectQuery());
 
 
             return orgs;
@@ -161,7 +161,7 @@ namespace PhoneNumbersDictionary
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Exception on copying file " + ex.Message);
+                MessageBox.Show("Ошибка при копировании файла " + ex.Message);
             }
             return "";
         }
@@ -176,7 +176,7 @@ namespace PhoneNumbersDictionary
                 }
                 catch(Exception ex)
                 {
-                    MessageBox.Show("Error on deleting file "+ ex.Message);
+                    MessageBox.Show("Ошибка при удалени файла "+ ex.Message);
                 }
             }
             

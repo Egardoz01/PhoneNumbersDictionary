@@ -9,5 +9,7 @@ namespace PhoneNumbersDictionary
     public interface IOrganizationFilter
     {
         string GetQuery();
+        string GetCountQuery();
+        string GetSelectQuery();
     }
 }

@@ -40,14 +40,14 @@ namespace PhoneNumbersDictionary
         {
             if (txtbxInfoType.Text == "")
             {
-                lblErrors.Text = "Info Type shuld not be empty";
+                lblErrors.Text = "Название доп. информации не может быть пустым";
                 lblErrors.Visible = true;
                 return false;
             }
 
             if (txtbxInfoData.Text == "")
             {
-                lblErrors.Text = "Info Data shuld not be empty";
+                lblErrors.Text = "Значение доп. информции не может быть пустым";
                 lblErrors.Visible = true;
                 return false;
             }

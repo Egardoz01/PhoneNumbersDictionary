@@ -16,9 +16,15 @@ namespace PhoneNumbersDictionary
         public  bool orgLocationComplete;
         public  string orgProfile;
         public  bool orgProfileComplete;
+
+        public string GetCountQuery()
+        {
+            return "SELECT COUNT (*) " + GetQuery();
+        }
+
         public string GetQuery()
         {
-            string query="SELECT * FROM Organization WHERE ";
+            string query="FROM Organization WHERE ";
             query += "Name ";
             if (orgNameComplete)
                 query += "='" +orgName +"' ";
@@ -41,6 +47,11 @@ namespace PhoneNumbersDictionary
            
 
             return query;
+        }
+
+        public string GetSelectQuery()
+        {
+            return "SELECT * " + GetQuery();
         }
     }
 }

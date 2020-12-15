@@ -13,9 +13,14 @@ namespace PhoneNumbersDictionary
         public bool TypeCompleteMatch { get; set; }
         public bool DataCompleteMatch { get; set; }
 
+        public string GetCountQuery()
+        {
+            return "SELECT COUNT(*) " + GetQuery();
+        }
+
         public string GetQuery()
         {
-            string query = "SELECT DISTINCT Organization.Id, Organization.Name, Organization.Location, Organization.Profile, Organization.Photo FROM Organization,AdditionalInfo WHERE Organization.Id = AdditionalInfo.OrganizationId AND AdditionalInfo.InfoType ";
+            string query = "FROM Organization,AdditionalInfo WHERE Organization.Id = AdditionalInfo.OrganizationId AND AdditionalInfo.InfoType ";
             if (TypeCompleteMatch)
                 query += "= '" + InfoType + "' ";
             else
@@ -29,6 +34,11 @@ namespace PhoneNumbersDictionary
                 query += "LIKE '%" + InfoData + "%'";
 
             return query;
+        }
+
+        public string GetSelectQuery()
+        {
+            return "SELECT DISTINCT Organization.Id, Organization.Name, Organization.Location, Organization.Profile, Organization.Photo " + GetQuery();
         }
     }
 }

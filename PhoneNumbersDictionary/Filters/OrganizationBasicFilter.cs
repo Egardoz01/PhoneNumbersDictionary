@@ -6,10 +6,19 @@ using System.Threading.Tasks;
 
 namespace PhoneNumbersDictionary
 {
-    class OrganizationBasicFiltet :IOrganizationFilter
+    class OrganizationBasicFilter :IOrganizationFilter
     {
+        public string GetCountQuery()
+        {
+            return "SELECT COUNT (*) FROM Organization";
+        }
 
         public string GetQuery()
+        {
+            return "";
+        }
+
+        public string GetSelectQuery()
         {
             return "SELECT * FROM Organization";
         }

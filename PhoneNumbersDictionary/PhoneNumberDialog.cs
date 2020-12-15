@@ -41,14 +41,14 @@ namespace PhoneNumbersDictionary
         {
             if (txtbxPhoneNumber.Text == "")
             {
-                lblErrors.Text = "Phone Number should not be empty";
+                lblErrors.Text = "Номер телефона не может быть пустым";
                 lblErrors.Visible = true;
                 return false;
             }
 
             if (txtbxtName.Text == "")
             {
-                lblErrors.Text = "Contact Name should not be empty";
+                lblErrors.Text = "Имя контакта не может быть пустым";
                 lblErrors.Visible = true;
                 return false;
             }

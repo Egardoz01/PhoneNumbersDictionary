@@ -10,10 +10,15 @@ namespace PhoneNumbersDictionary
     {
         public string Filename;
         public bool FilenameCompleteMatch;
-       
+
+        public string GetCountQuery()
+        {
+            return "SELECT COUNT (*) " + GetQuery();
+        }
+
         public string GetQuery()
         {
-            string query = "SELECT DISTINCT Organization.Id, Organization.Name, Organization.Location, Organization.Profile, Organization.Photo FROM Organization, OrganizationFile WHERE Organization.Id = OrganizationFile.OrganizationId AND OrganizationFile.Name ";
+            string query = "FROM Organization, OrganizationFile WHERE Organization.Id = OrganizationFile.OrganizationId AND OrganizationFile.Name ";
 
             if (FilenameCompleteMatch)
                 query += "= '" + Filename + "'";
@@ -22,6 +27,11 @@ namespace PhoneNumbersDictionary
 
 
             return query;
+        }
+
+        public string GetSelectQuery()
+        {
+            return "SELECT DISTINCT Organization.Id, Organization.Name, Organization.Location, Organization.Profile, Organization.Photo " + GetQuery();
         }
     }
 }

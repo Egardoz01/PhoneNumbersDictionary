@@ -39,44 +39,44 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(49, 25);
+            this.label1.Location = new System.Drawing.Point(12, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 13);
+            this.label1.Size = new System.Drawing.Size(148, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Info type:";
+            this.label1.Text = "Название доп. информации";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(49, 55);
+            this.label2.Location = new System.Drawing.Point(12, 55);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
+            this.label2.Size = new System.Drawing.Size(140, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Info data";
+            this.label2.Text = "Значение доп. информции";
             // 
             // txtbxInfoType
             // 
-            this.txtbxInfoType.Location = new System.Drawing.Point(149, 25);
+            this.txtbxInfoType.Location = new System.Drawing.Point(166, 25);
             this.txtbxInfoType.MaxLength = 100;
             this.txtbxInfoType.Name = "txtbxInfoType";
-            this.txtbxInfoType.Size = new System.Drawing.Size(100, 20);
+            this.txtbxInfoType.Size = new System.Drawing.Size(181, 20);
             this.txtbxInfoType.TabIndex = 2;
             // 
             // txtbxInfoData
             // 
-            this.txtbxInfoData.Location = new System.Drawing.Point(149, 55);
+            this.txtbxInfoData.Location = new System.Drawing.Point(166, 55);
             this.txtbxInfoData.MaxLength = 100;
             this.txtbxInfoData.Name = "txtbxInfoData";
-            this.txtbxInfoData.Size = new System.Drawing.Size(100, 20);
+            this.txtbxInfoData.Size = new System.Drawing.Size(181, 20);
             this.txtbxInfoData.TabIndex = 3;
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(272, 90);
+            this.btnOK.Location = new System.Drawing.Point(272, 114);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 4;
-            this.btnOK.Text = "OK";
+            this.btnOK.Text = "Сохранить";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
@@ -85,18 +85,18 @@
             this.lblErrors.AutoSize = true;
             this.lblErrors.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrors.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblErrors.Location = new System.Drawing.Point(52, 90);
+            this.lblErrors.Location = new System.Drawing.Point(12, 90);
             this.lblErrors.Name = "lblErrors";
-            this.lblErrors.Size = new System.Drawing.Size(44, 16);
+            this.lblErrors.Size = new System.Drawing.Size(58, 16);
             this.lblErrors.TabIndex = 5;
-            this.lblErrors.Text = "Errors";
+            this.lblErrors.Text = "Ошибки";
             this.lblErrors.Visible = false;
             // 
             // AdditionalInfoDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(359, 125);
+            this.ClientSize = new System.Drawing.Size(359, 149);
             this.Controls.Add(this.lblErrors);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.txtbxInfoData);
@@ -105,7 +105,7 @@
             this.Controls.Add(this.label1);
             this.Name = "AdditionalInfoDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Insert Additional Info";
+            this.Text = "Введите дополнительную информацию";
             this.ResumeLayout(false);
             this.PerformLayout();
 

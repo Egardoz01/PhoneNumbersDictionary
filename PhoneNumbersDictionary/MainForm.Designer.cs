@@ -94,7 +94,7 @@
             this.lbOrganizations.ItemHeight = 17;
             this.lbOrganizations.Location = new System.Drawing.Point(12, 15);
             this.lbOrganizations.Name = "lbOrganizations";
-            this.lbOrganizations.Size = new System.Drawing.Size(337, 461);
+            this.lbOrganizations.Size = new System.Drawing.Size(442, 461);
             this.lbOrganizations.TabIndex = 0;
             this.lbOrganizations.DoubleClick += new System.EventHandler(this.lbOrganizations_DoubleClick);
             // 
@@ -104,11 +104,11 @@
             this.btnAddOrganization.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAddOrganization.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddOrganization.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
-            this.btnAddOrganization.Location = new System.Drawing.Point(12, 521);
+            this.btnAddOrganization.Location = new System.Drawing.Point(12, 507);
             this.btnAddOrganization.Name = "btnAddOrganization";
-            this.btnAddOrganization.Size = new System.Drawing.Size(201, 41);
+            this.btnAddOrganization.Size = new System.Drawing.Size(201, 73);
             this.btnAddOrganization.TabIndex = 1;
-            this.btnAddOrganization.Text = "AddOrganization";
+            this.btnAddOrganization.Text = "Добавить Организацию";
             this.btnAddOrganization.UseVisualStyleBackColor = false;
             this.btnAddOrganization.Click += new System.EventHandler(this.btnAddOrganization_Click);
             // 
@@ -125,15 +125,14 @@
             // 
             this.btnOrgSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(127)))), ((int)(((byte)(141)))));
             this.btnOrgSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnOrgSearch.FlatAppearance.BorderSize = 0;
             this.btnOrgSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnOrgSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrgSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
-            this.btnOrgSearch.Location = new System.Drawing.Point(191, 403);
+            this.btnOrgSearch.Location = new System.Drawing.Point(197, 418);
             this.btnOrgSearch.Name = "btnOrgSearch";
-            this.btnOrgSearch.Size = new System.Drawing.Size(128, 28);
+            this.btnOrgSearch.Size = new System.Drawing.Size(128, 32);
             this.btnOrgSearch.TabIndex = 10;
-            this.btnOrgSearch.Text = "Search";
+            this.btnOrgSearch.Text = "Искать";
             this.btnOrgSearch.UseVisualStyleBackColor = false;
             this.btnOrgSearch.Click += new System.EventHandler(this.btnOrgSearch_Click);
             // 
@@ -150,7 +149,7 @@
             this.groupBox4.Size = new System.Drawing.Size(310, 101);
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Organization Location";
+            this.groupBox4.Text = "Местоположение";
             // 
             // txtbxOrgLocation
             // 
@@ -166,23 +165,23 @@
             this.tbLocationPart.AutoSize = true;
             this.tbLocationPart.Checked = true;
             this.tbLocationPart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
-            this.tbLocationPart.Location = new System.Drawing.Point(160, 71);
+            this.tbLocationPart.Location = new System.Drawing.Point(210, 75);
             this.tbLocationPart.Name = "tbLocationPart";
-            this.tbLocationPart.Size = new System.Drawing.Size(139, 20);
+            this.tbLocationPart.Size = new System.Drawing.Size(95, 20);
             this.tbLocationPart.TabIndex = 6;
             this.tbLocationPart.TabStop = true;
-            this.tbLocationPart.Text = "Part of the Location";
+            this.tbLocationPart.Text = "подстрока";
             this.tbLocationPart.UseVisualStyleBackColor = true;
             // 
             // rbLocationComplete
             // 
             this.rbLocationComplete.AutoSize = true;
             this.rbLocationComplete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
-            this.rbLocationComplete.Location = new System.Drawing.Point(25, 71);
+            this.rbLocationComplete.Location = new System.Drawing.Point(6, 75);
             this.rbLocationComplete.Name = "rbLocationComplete";
-            this.rbLocationComplete.Size = new System.Drawing.Size(123, 20);
+            this.rbLocationComplete.Size = new System.Drawing.Size(156, 20);
             this.rbLocationComplete.TabIndex = 5;
-            this.rbLocationComplete.Text = "Complete match";
+            this.rbLocationComplete.Text = "полное совпадение";
             this.rbLocationComplete.UseVisualStyleBackColor = true;
             // 
             // groupBox3
@@ -198,8 +197,8 @@
             this.groupBox3.Size = new System.Drawing.Size(310, 101);
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Organization Profile";
-            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
+            this.groupBox3.Text = "Профиль";
+           
             // 
             // txtbxOrgProfile
             // 
@@ -209,31 +208,32 @@
             this.txtbxOrgProfile.Name = "txtbxOrgProfile";
             this.txtbxOrgProfile.Size = new System.Drawing.Size(240, 22);
             this.txtbxOrgProfile.TabIndex = 3;
-            this.txtbxOrgProfile.TextChanged += new System.EventHandler(this.txtbxOrgProfile_TextChanged);
             // 
             // rbProfilePart
             // 
             this.rbProfilePart.AutoSize = true;
             this.rbProfilePart.Checked = true;
             this.rbProfilePart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
-            this.rbProfilePart.Location = new System.Drawing.Point(160, 75);
+            this.rbProfilePart.Location = new System.Drawing.Point(204, 75);
             this.rbProfilePart.Name = "rbProfilePart";
-            this.rbProfilePart.Size = new System.Drawing.Size(126, 20);
+            this.rbProfilePart.Size = new System.Drawing.Size(95, 20);
             this.rbProfilePart.TabIndex = 6;
             this.rbProfilePart.TabStop = true;
-            this.rbProfilePart.Text = "Part of the Profile";
+            this.rbProfilePart.Text = "подстрока";
             this.rbProfilePart.UseVisualStyleBackColor = true;
+           
             // 
             // rbProfileComplete
             // 
             this.rbProfileComplete.AutoSize = true;
             this.rbProfileComplete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
-            this.rbProfileComplete.Location = new System.Drawing.Point(25, 75);
+            this.rbProfileComplete.Location = new System.Drawing.Point(7, 75);
             this.rbProfileComplete.Name = "rbProfileComplete";
-            this.rbProfileComplete.Size = new System.Drawing.Size(123, 20);
+            this.rbProfileComplete.Size = new System.Drawing.Size(156, 20);
             this.rbProfileComplete.TabIndex = 5;
-            this.rbProfileComplete.Text = "Complete match";
+            this.rbProfileComplete.Text = "полное совпадение";
             this.rbProfileComplete.UseVisualStyleBackColor = true;
+           
             // 
             // groupBox2
             // 
@@ -248,30 +248,30 @@
             this.groupBox2.Size = new System.Drawing.Size(310, 93);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Organization Name";
+            this.groupBox2.Text = "Название";
             // 
             // rbNamePart
             // 
             this.rbNamePart.AutoSize = true;
             this.rbNamePart.Checked = true;
             this.rbNamePart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
-            this.rbNamePart.Location = new System.Drawing.Point(159, 66);
+            this.rbNamePart.Location = new System.Drawing.Point(209, 66);
             this.rbNamePart.Name = "rbNamePart";
-            this.rbNamePart.Size = new System.Drawing.Size(125, 20);
+            this.rbNamePart.Size = new System.Drawing.Size(95, 20);
             this.rbNamePart.TabIndex = 6;
             this.rbNamePart.TabStop = true;
-            this.rbNamePart.Text = "Part of the Name";
+            this.rbNamePart.Text = "подстрока";
             this.rbNamePart.UseVisualStyleBackColor = true;
             // 
             // rbNameComplete
             // 
             this.rbNameComplete.AutoSize = true;
             this.rbNameComplete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
-            this.rbNameComplete.Location = new System.Drawing.Point(24, 66);
+            this.rbNameComplete.Location = new System.Drawing.Point(6, 66);
             this.rbNameComplete.Name = "rbNameComplete";
-            this.rbNameComplete.Size = new System.Drawing.Size(123, 20);
+            this.rbNameComplete.Size = new System.Drawing.Size(156, 20);
             this.rbNameComplete.TabIndex = 5;
-            this.rbNameComplete.Text = "Complete match";
+            this.rbNameComplete.Text = "полное совпадение";
             this.rbNameComplete.UseVisualStyleBackColor = true;
             // 
             // btnShowAll
@@ -280,11 +280,11 @@
             this.btnShowAll.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnShowAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
-            this.btnShowAll.Location = new System.Drawing.Point(221, 521);
+            this.btnShowAll.Location = new System.Drawing.Point(219, 507);
             this.btnShowAll.Name = "btnShowAll";
-            this.btnShowAll.Size = new System.Drawing.Size(128, 41);
+            this.btnShowAll.Size = new System.Drawing.Size(128, 39);
             this.btnShowAll.TabIndex = 5;
-            this.btnShowAll.Text = "ShowAll";
+            this.btnShowAll.Text = "Показать все";
             this.btnShowAll.UseVisualStyleBackColor = false;
             this.btnShowAll.Click += new System.EventHandler(this.btnShowAll_Click);
             // 
@@ -294,12 +294,12 @@
             this.groupBox5.Controls.Add(this.groupBox6);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
-            this.groupBox5.Location = new System.Drawing.Point(718, 15);
+            this.groupBox5.Location = new System.Drawing.Point(849, 15);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(322, 225);
             this.groupBox5.TabIndex = 6;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Search by phone number";
+            this.groupBox5.Text = "Поиск по телефонным номерам";
             // 
             // btnPhoneSearch
             // 
@@ -307,11 +307,11 @@
             this.btnPhoneSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPhoneSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPhoneSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
-            this.btnPhoneSearch.Location = new System.Drawing.Point(182, 181);
+            this.btnPhoneSearch.Location = new System.Drawing.Point(188, 184);
             this.btnPhoneSearch.Name = "btnPhoneSearch";
             this.btnPhoneSearch.Size = new System.Drawing.Size(128, 32);
             this.btnPhoneSearch.TabIndex = 11;
-            this.btnPhoneSearch.Text = "Search";
+            this.btnPhoneSearch.Text = "Искать";
             this.btnPhoneSearch.UseVisualStyleBackColor = false;
             this.btnPhoneSearch.Click += new System.EventHandler(this.btnPhoneSearch_Click);
             // 
@@ -329,17 +329,17 @@
             this.groupBox6.Size = new System.Drawing.Size(310, 123);
             this.groupBox6.TabIndex = 8;
             this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "PhoneNumber";
+            this.groupBox6.Text = "Номер телефона";
             // 
             // cbPhoneOldNumbers
             // 
             this.cbPhoneOldNumbers.AutoSize = true;
             this.cbPhoneOldNumbers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
-            this.cbPhoneOldNumbers.Location = new System.Drawing.Point(148, 90);
+            this.cbPhoneOldNumbers.Location = new System.Drawing.Point(6, 97);
             this.cbPhoneOldNumbers.Name = "cbPhoneOldNumbers";
-            this.cbPhoneOldNumbers.Size = new System.Drawing.Size(152, 20);
+            this.cbPhoneOldNumbers.Size = new System.Drawing.Size(202, 20);
             this.cbPhoneOldNumbers.TabIndex = 7;
-            this.cbPhoneOldNumbers.Text = "Include Old Numbers";
+            this.cbPhoneOldNumbers.Text = "искать по старым номерам";
             this.cbPhoneOldNumbers.UseVisualStyleBackColor = true;
             // 
             // txtbxPhoneNumber
@@ -356,23 +356,23 @@
             this.radioButton1.AutoSize = true;
             this.radioButton1.Checked = true;
             this.radioButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
-            this.radioButton1.Location = new System.Drawing.Point(148, 61);
+            this.radioButton1.Location = new System.Drawing.Point(209, 71);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(136, 20);
+            this.radioButton1.Size = new System.Drawing.Size(95, 20);
             this.radioButton1.TabIndex = 6;
             this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Part of the Number";
+            this.radioButton1.Text = "подстрока";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // rbPhoneCompleteMatch
             // 
             this.rbPhoneCompleteMatch.AutoSize = true;
             this.rbPhoneCompleteMatch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
-            this.rbPhoneCompleteMatch.Location = new System.Drawing.Point(13, 61);
+            this.rbPhoneCompleteMatch.Location = new System.Drawing.Point(6, 71);
             this.rbPhoneCompleteMatch.Name = "rbPhoneCompleteMatch";
-            this.rbPhoneCompleteMatch.Size = new System.Drawing.Size(123, 20);
+            this.rbPhoneCompleteMatch.Size = new System.Drawing.Size(156, 20);
             this.rbPhoneCompleteMatch.TabIndex = 5;
-            this.rbPhoneCompleteMatch.Text = "Complete match";
+            this.rbPhoneCompleteMatch.Text = "полное совпадение";
             this.rbPhoneCompleteMatch.UseVisualStyleBackColor = true;
             // 
             // groupBox7
@@ -382,12 +382,12 @@
             this.groupBox7.Controls.Add(this.groupBox8);
             this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
-            this.groupBox7.Location = new System.Drawing.Point(1058, 15);
+            this.groupBox7.Location = new System.Drawing.Point(1206, 15);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(322, 328);
             this.groupBox7.TabIndex = 7;
             this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Search by Additional Info";
+            this.groupBox7.Text = "Поиск по дополнительной информации";
             // 
             // groupBox9
             // 
@@ -402,7 +402,7 @@
             this.groupBox9.Size = new System.Drawing.Size(310, 97);
             this.groupBox9.TabIndex = 14;
             this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Info Data";
+            this.groupBox9.Text = "Значение доп. информции";
             // 
             // txtbxInfoData
             // 
@@ -418,23 +418,23 @@
             this.radioButton4.AutoSize = true;
             this.radioButton4.Checked = true;
             this.radioButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
-            this.radioButton4.Location = new System.Drawing.Point(159, 69);
+            this.radioButton4.Location = new System.Drawing.Point(209, 70);
             this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(117, 20);
+            this.radioButton4.Size = new System.Drawing.Size(95, 20);
             this.radioButton4.TabIndex = 6;
             this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Part of the Data";
+            this.radioButton4.Text = "подстрока";
             this.radioButton4.UseVisualStyleBackColor = true;
             // 
             // rbInfoDataComplete
             // 
             this.rbInfoDataComplete.AutoSize = true;
             this.rbInfoDataComplete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
-            this.rbInfoDataComplete.Location = new System.Drawing.Point(24, 69);
+            this.rbInfoDataComplete.Location = new System.Drawing.Point(6, 70);
             this.rbInfoDataComplete.Name = "rbInfoDataComplete";
-            this.rbInfoDataComplete.Size = new System.Drawing.Size(123, 20);
+            this.rbInfoDataComplete.Size = new System.Drawing.Size(156, 20);
             this.rbInfoDataComplete.TabIndex = 5;
-            this.rbInfoDataComplete.Text = "Complete match";
+            this.rbInfoDataComplete.Text = "полное совпадение";
             this.rbInfoDataComplete.UseVisualStyleBackColor = true;
             // 
             // btnSearchByInfo
@@ -443,11 +443,11 @@
             this.btnSearchByInfo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSearchByInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchByInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
-            this.btnSearchByInfo.Location = new System.Drawing.Point(182, 278);
+            this.btnSearchByInfo.Location = new System.Drawing.Point(188, 287);
             this.btnSearchByInfo.Name = "btnSearchByInfo";
             this.btnSearchByInfo.Size = new System.Drawing.Size(128, 32);
             this.btnSearchByInfo.TabIndex = 14;
-            this.btnSearchByInfo.Text = "Search";
+            this.btnSearchByInfo.Text = "Искать";
             this.btnSearchByInfo.UseVisualStyleBackColor = false;
             this.btnSearchByInfo.Click += new System.EventHandler(this.btnSearchByInfo_Click);
             // 
@@ -464,7 +464,7 @@
             this.groupBox8.Size = new System.Drawing.Size(310, 97);
             this.groupBox8.TabIndex = 13;
             this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Info Type";
+            this.groupBox8.Text = "Название доп. информации";
             // 
             // txtbxInfoType
             // 
@@ -480,23 +480,23 @@
             this.radioButton2.AutoSize = true;
             this.radioButton2.Checked = true;
             this.radioButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
-            this.radioButton2.Location = new System.Drawing.Point(159, 61);
+            this.radioButton2.Location = new System.Drawing.Point(209, 71);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(120, 20);
+            this.radioButton2.Size = new System.Drawing.Size(95, 20);
             this.radioButton2.TabIndex = 6;
             this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Part of the Type";
+            this.radioButton2.Text = "подстрока";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // rbInoTypeComlete
             // 
             this.rbInoTypeComlete.AutoSize = true;
             this.rbInoTypeComlete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
-            this.rbInoTypeComlete.Location = new System.Drawing.Point(24, 61);
+            this.rbInoTypeComlete.Location = new System.Drawing.Point(6, 71);
             this.rbInoTypeComlete.Name = "rbInoTypeComlete";
-            this.rbInoTypeComlete.Size = new System.Drawing.Size(123, 20);
+            this.rbInoTypeComlete.Size = new System.Drawing.Size(156, 20);
             this.rbInoTypeComlete.TabIndex = 5;
-            this.rbInoTypeComlete.Text = "Complete match";
+            this.rbInoTypeComlete.Text = "полное совпадение";
             this.rbInoTypeComlete.UseVisualStyleBackColor = true;
             // 
             // groupBox10
@@ -505,12 +505,12 @@
             this.groupBox10.Controls.Add(this.groupBox11);
             this.groupBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
-            this.groupBox10.Location = new System.Drawing.Point(718, 246);
+            this.groupBox10.Location = new System.Drawing.Point(849, 246);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(322, 230);
             this.groupBox10.TabIndex = 12;
             this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Search by File Name";
+            this.groupBox10.Text = "Поиск по файлам";
             // 
             // btnSearchByFile
             // 
@@ -518,11 +518,11 @@
             this.btnSearchByFile.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSearchByFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchByFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
-            this.btnSearchByFile.Location = new System.Drawing.Point(186, 184);
+            this.btnSearchByFile.Location = new System.Drawing.Point(188, 184);
             this.btnSearchByFile.Name = "btnSearchByFile";
             this.btnSearchByFile.Size = new System.Drawing.Size(128, 32);
             this.btnSearchByFile.TabIndex = 11;
-            this.btnSearchByFile.Text = "Search";
+            this.btnSearchByFile.Text = "Искать";
             this.btnSearchByFile.UseVisualStyleBackColor = false;
             this.btnSearchByFile.Click += new System.EventHandler(this.btnSearchByFile_Click);
             // 
@@ -539,7 +539,7 @@
             this.groupBox11.Size = new System.Drawing.Size(310, 105);
             this.groupBox11.TabIndex = 8;
             this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "File Name";
+            this.groupBox11.Text = "Имя файла";
             // 
             // txtbxFileName
             // 
@@ -555,23 +555,23 @@
             this.radioButton3.AutoSize = true;
             this.radioButton3.Checked = true;
             this.radioButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
-            this.radioButton3.Location = new System.Drawing.Point(151, 71);
+            this.radioButton3.Location = new System.Drawing.Point(209, 79);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(125, 20);
+            this.radioButton3.Size = new System.Drawing.Size(95, 20);
             this.radioButton3.TabIndex = 6;
             this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Part of the Name";
+            this.radioButton3.Text = "подстрока";
             this.radioButton3.UseVisualStyleBackColor = true;
             // 
             // rbFileComleteMatch
             // 
             this.rbFileComleteMatch.AutoSize = true;
             this.rbFileComleteMatch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
-            this.rbFileComleteMatch.Location = new System.Drawing.Point(22, 71);
+            this.rbFileComleteMatch.Location = new System.Drawing.Point(6, 79);
             this.rbFileComleteMatch.Name = "rbFileComleteMatch";
-            this.rbFileComleteMatch.Size = new System.Drawing.Size(123, 20);
+            this.rbFileComleteMatch.Size = new System.Drawing.Size(156, 20);
             this.rbFileComleteMatch.TabIndex = 5;
-            this.rbFileComleteMatch.Text = "Complete match";
+            this.rbFileComleteMatch.Text = "полное совпадение";
             this.rbFileComleteMatch.UseVisualStyleBackColor = true;
             // 
             // groupBox1
@@ -582,19 +582,19 @@
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
-            this.groupBox1.Location = new System.Drawing.Point(365, 15);
+            this.groupBox1.Location = new System.Drawing.Point(485, 15);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(332, 461);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Search by Organization info";
+            this.groupBox1.Text = "Поиск по информации об организации";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
-            this.ClientSize = new System.Drawing.Size(1428, 592);
+            this.ClientSize = new System.Drawing.Size(1540, 592);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox10);
             this.Controls.Add(this.groupBox7);
@@ -604,7 +604,7 @@
             this.Controls.Add(this.lbOrganizations);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
-            this.Text = "Phone Numbers Dictionary";
+            this.Text = "Телефонная Книга Организаций";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();

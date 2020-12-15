@@ -8,10 +8,11 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>PhoneNumbersDictionary</RootNamespace>
     <AssemblyName>PhoneNumbersDictionary</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -46,45 +47,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdditionalInfo.cs" />
+    <Compile Include="Data\Models\AdditionalInfo.cs" />
     <Compile Include="AdditionalInfoDialog.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AdditionalInfoDialog.Designer.cs">
       <DependentUpon>AdditionalInfoDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdditionalInfoRepository.cs" />
+    <Compile Include="Data\AdditionalInfoRepository.cs" />
     <Compile Include="Db.cs" />
-    <Compile Include="IOrganizationFilter.cs" />
+    <Compile Include="Filters\IOrganizationFilter.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="OrganizationBasicFiltet.cs" />
-    <Compile Include="OrganizationFile.cs" />
-    <Compile Include="OrganizationFilerByFile.cs" />
-    <Compile Include="OrganizationFilesRepositiry.cs" />
-    <Compile Include="OrganizationFilterByData.cs" />
-    <Compile Include="OrganizationFilterByInfo.cs" />
+    <Compile Include="Filters\OrganizationBasicFilter.cs" />
+    <Compile Include="Data\Models\OrganizationFile.cs" />
+    <Compile Include="Filters\OrganizationFilerByFile.cs" />
+    <Compile Include="Data\OrganizationFilesRepositiry.cs" />
+    <Compile Include="Filters\OrganizationFilterByData.cs" />
+    <Compile Include="Filters\OrganizationFilterByInfo.cs" />
     <Compile Include="OrganizationForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="OrganizationForm.Designer.cs">
       <DependentUpon>OrganizationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Organization.cs" />
-    <Compile Include="OrganizationRepository.cs" />
-    <Compile Include="PhoneNumber.cs" />
+    <Compile Include="Data\Models\Organization.cs" />
+    <Compile Include="Data\OrganizationRepository.cs" />
+    <Compile Include="Data\Models\PhoneNumber.cs" />
     <Compile Include="PhoneNumberDialog.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PhoneNumberDialog.Designer.cs">
       <DependentUpon>PhoneNumberDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="OrganizationFilterByPhone.cs" />
-    <Compile Include="PhoneNumberRepository.cs" />
+    <Compile Include="Filters\OrganizationFilterByPhone.cs" />
+    <Compile Include="Data\PhoneNumberRepository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AdditionalInfoDialog.resx">
@@ -107,6 +108,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

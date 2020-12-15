@@ -31,8 +31,7 @@ namespace PhoneNumbersDictionary
                 org = organization;
                 FillOrganizationData();
                 _edit = true;
-                lblMain.Text = "View/Edit Organization Data";
-                btnAddOrganization.Text = "Save Changes";
+                lblMain.Text = "Данные об Организации:";
                 btnRemoveOrganization.Visible = true;
             }
         }
@@ -42,11 +41,11 @@ namespace PhoneNumbersDictionary
             ContextMenu menu_phone = new ContextMenu();
 
             MenuItem editItem = new MenuItem();
-            editItem.Text = "Edit";
+            editItem.Text = "Изменить";
             editItem.Click += new EventHandler(EditPhoneNumberItem);
 
             MenuItem removeItem = new MenuItem();
-            removeItem.Text = "Remove";
+            removeItem.Text = "Удалить";
             removeItem.Click += new EventHandler(RemovePhoneNumberItem);
 
 
@@ -57,21 +56,26 @@ namespace PhoneNumbersDictionary
             ContextMenu menu_info = new ContextMenu();
 
             MenuItem editItem2 = new MenuItem();
-            editItem2.Text = "Edit";
+            editItem2.Text = "Изменить";
             editItem2.Click += new EventHandler(EditInfoItem);
 
             MenuItem removeItem2 = new MenuItem();
-            removeItem2.Text = "Remove";
+            removeItem2.Text = "Удалить";
             removeItem2.Click += new EventHandler(RemoveInfoItem);
+
+            menu_info.MenuItems.Add(editItem2);
+            menu_info.MenuItems.Add(removeItem2);
+            lbAdditionalInfo.ContextMenu = menu_info;
+
 
             ContextMenu menu_file = new ContextMenu();
 
             MenuItem openItem = new MenuItem();
-            openItem.Text = "Open";
+            openItem.Text = "Изменить";
             openItem.Click += new EventHandler(OpenFileItem);
 
             MenuItem removeItem3 = new MenuItem();
-            removeItem3.Text = "Remove";
+            removeItem3.Text = "Удалить";
             removeItem3.Click += new EventHandler(RemoveFileItem);
 
 
@@ -96,7 +100,7 @@ namespace PhoneNumbersDictionary
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error on loading image "+ex.Message);
+                    MessageBox.Show("Ошибка при загрузке изображения "+ex.Message);
                 }
             }
 
@@ -151,15 +155,13 @@ namespace PhoneNumbersDictionary
             if (!_edit)
             {
                 db.AddOrganization(org);
-
-                MessageBox.Show("Organization " + org.Name + " was successfully added");
             }
             else
             {
                 db.EditOrganization(org);
-
-                MessageBox.Show("Organization " + org.Name + " was successfully Saved");
             }
+
+            MessageBox.Show("Организация " + org.Name + " Успешно Сохранена");
             Close();
 
         }
@@ -202,7 +204,7 @@ namespace PhoneNumbersDictionary
             PhoneNumber phone = (PhoneNumber)lbPhoneNumbers.SelectedItem;
             if (phone != null)
             {
-                var result = MessageBox.Show("Do you really want to remove selected phone Number?", "Remove Phone Number",
+                var result = MessageBox.Show("Вы действительно хотите удалить выбранный номер телефона?", "Удаление Номера Телефона",
                                MessageBoxButtons.YesNo,
                                MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
@@ -251,7 +253,7 @@ namespace PhoneNumbersDictionary
             AdditionalInfo info = (AdditionalInfo)lbAdditionalInfo.SelectedItem;
             if (info != null)
             {
-                var result = MessageBox.Show("Do you really want to remove selected Additional Info?", "Remove Additional Info",
+                var result = MessageBox.Show("Вы действительно хотите удалить выбранную дополнительную информацию?", "Удаление доп. информации",
                                MessageBoxButtons.YesNo,
                                MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
@@ -272,7 +274,7 @@ namespace PhoneNumbersDictionary
             OrganizationFile file = (OrganizationFile)lbFiles.SelectedItem;
             if (file != null)
             {
-                var result = MessageBox.Show("Do you really want to remove selected File?", "Remove Organization File",
+                var result = MessageBox.Show("Вы действительно хотите удалить выбранный файл?", "Удаление файла",
                                MessageBoxButtons.YesNo,
                                MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
@@ -301,12 +303,12 @@ namespace PhoneNumbersDictionary
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error on opening the file "+ ex.Message);
+                        MessageBox.Show("Ошибка при открытии файла "+ ex.Message);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("File not found");
+                    MessageBox.Show("Файл не найден");
                 }
             }
         }

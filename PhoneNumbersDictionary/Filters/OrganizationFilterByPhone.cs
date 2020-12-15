@@ -12,9 +12,14 @@ namespace PhoneNumbersDictionary
         public bool CompleteMatch { get; set; }
         public bool IncludeOldNumbers { get; set; }
 
+        public string GetCountQuery()
+        {
+            return "SELECT COUNT(*) " + GetQuery();
+        }
+
         public string GetQuery()
         {
-            string query = "SELECT DISTINCT Organization.Id, Organization.Name, Organization.Location, Organization.Profile, Organization.Photo FROM Organization,PhoneNumber WHERE Organization.Id = PhoneNumber.OrganizationId AND PhoneNumber.PhoneNumber ";
+            string query = "FROM Organization,PhoneNumber WHERE Organization.Id = PhoneNumber.OrganizationId AND PhoneNumber.PhoneNumber ";
             if (CompleteMatch)
                 query += "= '" + PhoneNumber + "' ";
             else
@@ -23,6 +28,11 @@ namespace PhoneNumbersDictionary
             if (!IncludeOldNumbers)
                 query += "AND PhoneNumber.Active=1";
             return query;
+        }
+
+        public string GetSelectQuery()
+        {
+            return "SELECT DISTINCT Organization.Id, Organization.Name, Organization.Location, Organization.Profile, Organization.Photo " + GetQuery();
         }
     }
 }
