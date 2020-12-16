@@ -75,6 +75,8 @@
             this.txtbxPageSIze = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblCurPage = new System.Windows.Forms.Label();
+            this.btnNextPage = new System.Windows.Forms.Button();
+            this.btnPrevPage = new System.Windows.Forms.Button();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -641,18 +643,46 @@
             this.lblCurPage.AutoSize = true;
             this.lblCurPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCurPage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
-            this.lblCurPage.Location = new System.Drawing.Point(12, 584);
+            this.lblCurPage.Location = new System.Drawing.Point(65, 584);
             this.lblCurPage.Name = "lblCurPage";
             this.lblCurPage.Size = new System.Drawing.Size(148, 20);
             this.lblCurPage.TabIndex = 17;
             this.lblCurPage.Text = "Текущая страница";
+            // 
+            // btnNextPage
+            // 
+            this.btnNextPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(127)))), ((int)(((byte)(141)))));
+            this.btnNextPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNextPage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
+            this.btnNextPage.Location = new System.Drawing.Point(252, 579);
+            this.btnNextPage.Name = "btnNextPage";
+            this.btnNextPage.Size = new System.Drawing.Size(32, 32);
+            this.btnNextPage.TabIndex = 18;
+            this.btnNextPage.Text = ">";
+            this.btnNextPage.UseVisualStyleBackColor = false;
+            this.btnNextPage.Click += new System.EventHandler(this.btnNextPage_Click);
+            // 
+            // btnPrevPage
+            // 
+            this.btnPrevPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(127)))), ((int)(((byte)(141)))));
+            this.btnPrevPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrevPage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
+            this.btnPrevPage.Location = new System.Drawing.Point(12, 579);
+            this.btnPrevPage.Name = "btnPrevPage";
+            this.btnPrevPage.Size = new System.Drawing.Size(32, 32);
+            this.btnPrevPage.TabIndex = 19;
+            this.btnPrevPage.Text = "<";
+            this.btnPrevPage.UseVisualStyleBackColor = false;
+            this.btnPrevPage.Click += new System.EventHandler(this.btnPrevPage_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
-            this.ClientSize = new System.Drawing.Size(1283, 789);
+            this.ClientSize = new System.Drawing.Size(1545, 778);
+            this.Controls.Add(this.btnPrevPage);
+            this.Controls.Add(this.btnNextPage);
             this.Controls.Add(this.lblCurPage);
             this.Controls.Add(this.groupBox12);
             this.Controls.Add(this.lblOrgCount);
@@ -740,5 +770,7 @@
         private System.Windows.Forms.TextBox txtbxPageSIze;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblCurPage;
+        private System.Windows.Forms.Button btnNextPage;
+        private System.Windows.Forms.Button btnPrevPage;
     }
 }

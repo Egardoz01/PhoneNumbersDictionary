@@ -15,6 +15,7 @@ namespace PhoneNumbersDictionary
         private readonly Db db;
         private int pageSize;
         private int curPage;
+        private IOrganizationFilter lastFilter;
         public MainForm()
         {
             InitializeComponent();
@@ -31,17 +32,32 @@ namespace PhoneNumbersDictionary
 
         private void LoadAllOrganizations()
         {
+            curPage = 1;
             LoadOrganizationsByFilter(new OrganizationBasicFilter());
         }
         private void LoadOrganizationsByFilter(IOrganizationFilter filter)
         {
-
+            lastFilter = filter;
             pageSize = int.Parse(txtbxPageSIze.Text);
 
-            lbOrganizations.Items.Clear();
-            lbOrganizations.Items.AddRange(db.GetOrganizations(filter, 0, pageSize).ToArray());
+            int amount = db.GetOrganizationsCount(filter);
+            lblOrgCount.Text = String.Format("По вашему запросу найдено {0} организаций",amount );
+            lblCurPage.Text = String.Format("Страница {0} из {1}",curPage, (amount+pageSize-1)/pageSize);
+            if (curPage == 1)
+                btnPrevPage.Enabled = false;
+            else
+                btnPrevPage.Enabled = true;
 
-            lblOrgCount.Text = String.Format("По вашему запросу найдено {1} организаций", lbOrganizations.Items.Count, db.GetOrganizationsCount(filter));
+            if (curPage * pageSize >= amount)
+                btnNextPage.Enabled = false;
+            else
+                btnNextPage.Enabled = true;
+            
+
+            lbOrganizations.Items.Clear();
+            lbOrganizations.Items.AddRange(db.GetOrganizations(filter, (curPage-1)*pageSize, pageSize).ToArray());
+
+
         }
 
 
@@ -75,11 +91,13 @@ namespace PhoneNumbersDictionary
 
         private void btnShowAll_Click(object sender, EventArgs e)
         {
+            curPage = 1;
             LoadAllOrganizations();
         }
 
         private void btnPhoneSearch_Click(object sender, EventArgs e)
         {
+            curPage = 1;
             OrganizationFilterByPhone filter = new OrganizationFilterByPhone();
             filter.PhoneNumber = txtbxPhoneNumber.Text;
             filter.CompleteMatch = rbPhoneCompleteMatch.Checked;
@@ -89,6 +107,7 @@ namespace PhoneNumbersDictionary
 
         private void btnSearchByInfo_Click(object sender, EventArgs e)
         {
+            curPage = 1;
             OrganizationFilterByInfo filter = new OrganizationFilterByInfo();
             filter.InfoData = txtbxInfoData.Text;
             filter.InfoType = txtbxInfoType.Text;
@@ -99,6 +118,7 @@ namespace PhoneNumbersDictionary
 
         private void btnSearchByFile_Click(object sender, EventArgs e)
         {
+            curPage = 1;
             OrganizationFilerByFile filter = new OrganizationFilerByFile();
             filter.Filename = txtbxFileName.Text;
             filter.FilenameCompleteMatch = rbFileComleteMatch.Checked;
@@ -114,8 +134,24 @@ namespace PhoneNumbersDictionary
                 MessageBox.Show("Вводимое значение должно быть числом");
                 txtbxPageSIze.Focus();
             }
+            else
+            {
+                LoadOrganizationsByFilter(lastFilter);
+            }
             
 
+        }
+
+        private void btnNextPage_Click(object sender, EventArgs e)
+        {
+            curPage++;
+            LoadOrganizationsByFilter(lastFilter);
+        }
+
+        private void btnPrevPage_Click(object sender, EventArgs e)
+        {
+            curPage--;
+            LoadOrganizationsByFilter(lastFilter);
         }
     }
 }
