@@ -15,24 +15,31 @@ namespace PhoneNumbersDictionary
 
         public string GetCountQuery()
         {
-            return "SELECT COUNT(*) " + GetQuery();
+            return "SELECT COUNT(DISTINCT Organization.id) " + GetQuery();
         }
 
         public string GetQuery()
         {
-            string query = "FROM Organization,AdditionalInfo WHERE Organization.Id = AdditionalInfo.OrganizationId AND AdditionalInfo.InfoType ";
-            if (TypeCompleteMatch)
-                query += "= '" + InfoType + "' ";
-            else
-                query += "LIKE '%" + InfoType + "%' ";
+            string query = "FROM Organization,AdditionalInfo WHERE Organization.Id = AdditionalInfo.OrganizationId ";
 
-            query += "AND AdditionalInfo.InfoData ";
+            if (InfoType != "")
+            {
+                query += " AND AdditionalInfo.InfoType ";
+                if (TypeCompleteMatch)
+                    query += "= '" + InfoType + "' ";
+                else
+                    query += "LIKE '%" + InfoType + "%' ";
 
-            if (DataCompleteMatch)
-                query += "= '" + InfoData + "'";
-            else
-                query += "LIKE '%" + InfoData + "%'";
-
+               
+            }
+            if (InfoType != "")
+            {
+                query += " AND AdditionalInfo.InfoData ";
+                if (DataCompleteMatch)
+                    query += "= '" + InfoData + "'";
+                else
+                    query += "LIKE '%" + InfoData + "%'";
+            }
             return query;
         }
 

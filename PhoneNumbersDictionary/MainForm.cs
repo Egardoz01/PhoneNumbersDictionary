@@ -37,6 +37,10 @@ namespace PhoneNumbersDictionary
         }
         private void LoadOrganizationsByFilter(IOrganizationFilter filter)
         {
+
+            System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.WaitCursor;
+            var watch = System.Diagnostics.Stopwatch.StartNew();
+
             lastFilter = filter;
             pageSize = int.Parse(txtbxPageSIze.Text);
 
@@ -57,6 +61,12 @@ namespace PhoneNumbersDictionary
             lbOrganizations.Items.Clear();
             lbOrganizations.Items.AddRange(db.GetOrganizations(filter, (curPage-1)*pageSize, pageSize).ToArray());
 
+
+            System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.Arrow;
+            watch.Stop();
+            var elapsedMs = watch.ElapsedMilliseconds;
+
+            lblExecutionTime.Text = "Выполнение запроса заняло "+elapsedMs/1000.0 +" секунд";
 
         }
 

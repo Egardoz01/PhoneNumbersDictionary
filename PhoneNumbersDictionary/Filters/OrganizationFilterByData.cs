@@ -25,6 +25,7 @@ namespace PhoneNumbersDictionary
         public string GetQuery()
         {
             string query="FROM Organization WHERE ";
+            
             query += "Name ";
             if (orgNameComplete)
                 query += "='" +orgName +"' ";

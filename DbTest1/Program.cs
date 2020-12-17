@@ -14,10 +14,10 @@ namespace DbTest1
 
             Db db = new Db();
 
-            int cnt_organizations = 10;
-            int cnt_items = 10;
+            int cnt_organizations = 1000000;
+            int cnt_items = 1;
 
-            int next_step = 10;
+            int next_step = 1;
             for (int j = 1; j <= cnt_organizations; j++)
             {
                 Organization org = new Organization();
@@ -53,7 +53,7 @@ namespace DbTest1
                 if (next_step <= j * 100 / cnt_organizations)
                 {
                     Console.WriteLine(next_step + "%  DONE");
-                    next_step += 10;
+                    next_step += 1;
 
                 }
             }

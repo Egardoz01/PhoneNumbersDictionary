@@ -14,17 +14,22 @@ namespace PhoneNumbersDictionary
 
         public string GetCountQuery()
         {
-            return "SELECT COUNT(*) " + GetQuery();
+            return "SELECT COUNT(DISTINCT Organization.id) " + GetQuery();
         }
 
         public string GetQuery()
         {
-            string query = "FROM Organization,PhoneNumber WHERE Organization.Id = PhoneNumber.OrganizationId AND PhoneNumber.PhoneNumber ";
-            if (CompleteMatch)
-                query += "= '" + PhoneNumber + "' ";
-            else
-                query += "LIKE '%" + PhoneNumber + "%' ";
+            string query = "FROM Organization,PhoneNumber WHERE Organization.Id = PhoneNumber.OrganizationId ";
 
+
+            if (PhoneNumber != "")
+            {
+                query+= " AND PhoneNumber.PhoneNumber ";
+                if (CompleteMatch)
+                    query += "= '" + PhoneNumber + "' ";
+                else
+                    query += "LIKE '%" + PhoneNumber + "%' ";
+            }
             if (!IncludeOldNumbers)
                 query += "AND PhoneNumber.Active=1";
             return query;

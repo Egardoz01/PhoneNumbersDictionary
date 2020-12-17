@@ -13,12 +13,12 @@ namespace PhoneNumbersDictionary
 
         public string GetCountQuery()
         {
-            return "SELECT COUNT (*) " + GetQuery();
+            return "SELECT COUNT(DISTINCT Organization.id)  " + GetQuery();
         }
 
         public string GetQuery()
         {
-            string query = "FROM Organization, OrganizationFile WHERE Organization.Id = OrganizationFile.OrganizationId AND OrganizationFile.Name ";
+            string query = "FROM OrganizationFile,  Organization WHERE Organization.Id = OrganizationFile.OrganizationId AND OrganizationFile.Name ";
 
             if (FilenameCompleteMatch)
                 query += "= '" + Filename + "'";

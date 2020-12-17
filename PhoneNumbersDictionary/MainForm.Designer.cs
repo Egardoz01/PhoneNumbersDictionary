@@ -77,6 +77,7 @@
             this.lblCurPage = new System.Windows.Forms.Label();
             this.btnNextPage = new System.Windows.Forms.Button();
             this.btnPrevPage = new System.Windows.Forms.Button();
+            this.lblExecutionTime = new System.Windows.Forms.Label();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -675,12 +676,24 @@
             this.btnPrevPage.UseVisualStyleBackColor = false;
             this.btnPrevPage.Click += new System.EventHandler(this.btnPrevPage_Click);
             // 
+            // lblExecutionTime
+            // 
+            this.lblExecutionTime.AutoSize = true;
+            this.lblExecutionTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExecutionTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
+            this.lblExecutionTime.Location = new System.Drawing.Point(12, 537);
+            this.lblExecutionTime.Name = "lblExecutionTime";
+            this.lblExecutionTime.Size = new System.Drawing.Size(292, 20);
+            this.lblExecutionTime.TabIndex = 20;
+            this.lblExecutionTime.Text = "Выполнение запроса заняло t секунд";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(1545, 778);
+            this.Controls.Add(this.lblExecutionTime);
             this.Controls.Add(this.btnPrevPage);
             this.Controls.Add(this.btnNextPage);
             this.Controls.Add(this.lblCurPage);
@@ -772,5 +785,6 @@
         private System.Windows.Forms.Label lblCurPage;
         private System.Windows.Forms.Button btnNextPage;
         private System.Windows.Forms.Button btnPrevPage;
+        private System.Windows.Forms.Label lblExecutionTime;
     }
 }
