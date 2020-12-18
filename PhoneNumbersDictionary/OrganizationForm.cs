@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PhoneNumbersDictionary
@@ -166,11 +161,6 @@ namespace PhoneNumbersDictionary
 
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            
-        }
-
         private void EditPhoneNumberItem(object sender, EventArgs e)
         {
             PhoneNumber phone = (PhoneNumber)lbPhoneNumbers.SelectedItem;
@@ -316,14 +306,14 @@ namespace PhoneNumbersDictionary
 
         private void btnRemoveOrganization_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("Are you sure?", "Remove Organization",
+            var result = MessageBox.Show("Вы уверены?", "Удалить Организацию",
                                 MessageBoxButtons.YesNo,
                                 MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 db.RemoveOrganization(org);
 
-                MessageBox.Show("Organization " + org.Name + " was successfullyremoved");
+                MessageBox.Show("Организация " + org.Name + " Была успешно удалена");
                 Close();
             }
         }
@@ -332,7 +322,7 @@ namespace PhoneNumbersDictionary
         {
             using (OpenFileDialog dlg = new OpenFileDialog())
             {
-                dlg.Title = "Open Image";
+                dlg.Title = "Добавить изображение";
                 dlg.Filter = "Image Files (*.bmp;*.jpg;*.jpeg,*.png)|*.BMP;*.JPG;*.JPEG;*.PNG";
 
                 if (dlg.ShowDialog() == DialogResult.OK)
@@ -354,7 +344,7 @@ namespace PhoneNumbersDictionary
         {
             using (OpenFileDialog dlg = new OpenFileDialog())
             {
-                dlg.Title = "Add FIle";
+                dlg.Title = "Добавить файл";
                
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {
@@ -367,11 +357,6 @@ namespace PhoneNumbersDictionary
                     lbFiles.Items.Add(file);
                 }
             }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

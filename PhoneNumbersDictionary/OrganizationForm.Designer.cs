@@ -185,7 +185,6 @@
             this.label1.Size = new System.Drawing.Size(87, 20);
             this.label1.TabIndex = 13;
             this.label1.Text = "Название:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // lbPhoneNumbers
             // 
@@ -304,7 +303,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "OrganizationForm";
             this.Text = "Организация";
-            this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbOrgPhoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

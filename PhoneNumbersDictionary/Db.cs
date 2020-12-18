@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PhoneNumbersDictionary
@@ -191,22 +188,11 @@ namespace PhoneNumbersDictionary
 
         public void RemoveOrganization(Organization org)
         {
-            string query = "DELETE FROM PhoneNumber where OrganizationId=" + org.Id;
-            SqlCommand cmd = new SqlCommand(query,_conn);
-            cmd.ExecuteNonQuery();
-           
-            query = "DELETE FROM AdditionalInfo where OrganizationId=" + org.Id;
-            cmd = new SqlCommand(query, _conn);
-            cmd.ExecuteNonQuery();
+            PhoneNumberRepository.RemoveByOrganizationId(org.Id);
+            OrganizationFilesRepositiry.RemoveByOrganizationId(org.Id);
+            AdditionalInfoRepository.RemoveByOrganizationId(org.Id);//Удаляем всю информацию, связанную с организацией
 
-            query = "DELETE FROM OrganizationFile where OrganizationId=" + org.Id;
-            cmd = new SqlCommand(query, _conn);
-            cmd.ExecuteNonQuery();
-
-            query = "DELETE FROM Organization where Id=" + org.Id;
-            cmd = new SqlCommand(query, _conn);
-            cmd.ExecuteNonQuery();
-
+            OrganizationRepository.RemoveByOrganizationId(org.Id);//удаляем саму организацию
         }
 
     }

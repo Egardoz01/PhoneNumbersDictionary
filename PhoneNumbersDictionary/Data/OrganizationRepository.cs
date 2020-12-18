@@ -51,5 +51,12 @@ namespace PhoneNumbersDictionary
             return orgs;
         }
 
+        public void RemoveByOrganizationId(int Id)
+        {
+            string query = "DELETE FROM Organization WHERE Id=" + Id;
+            SqlCommand cmd = new SqlCommand(query, _conn);
+            cmd.ExecuteNonQuery();
+        }
+
     }
 }

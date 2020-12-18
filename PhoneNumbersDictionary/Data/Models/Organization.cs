@@ -20,11 +20,12 @@ namespace PhoneNumbersDictionary
 
         public List<PhoneNumber> PhoneNumbers { get; set; }
 
-        public List<PhoneNumber> PhoneNumbersToAdd { get; set; }
+        public List<PhoneNumber> PhoneNumbersToAdd { get; set; }//все списки нужны, чтобы эффективно динамически управлять данными
 
         public List<PhoneNumber> PhoneNumbersToEdit{ get; set; }
 
         public List<PhoneNumber> PhoneNumbersToRemove { get; set; }
+
 
         public List<AdditionalInfo> AdditionalInfos { get; set; }
 
@@ -33,6 +34,7 @@ namespace PhoneNumbersDictionary
         public List<AdditionalInfo> AdditionalInfosToEdit { get; set; }
 
         public List<AdditionalInfo> AdditionalInfosToRemove { get; set; }
+
 
         public List<OrganizationFile> OrganizationFiles { get; set; }
 
