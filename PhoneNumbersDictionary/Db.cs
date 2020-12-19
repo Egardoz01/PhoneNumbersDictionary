@@ -47,7 +47,7 @@ namespace PhoneNumbersDictionary
 
         }
 
-        public void AddOrganization(Organization org)
+        public int AddOrganization(Organization org)
         {
             int id = OrganizationRepository.Add(org);
 
@@ -68,6 +68,7 @@ namespace PhoneNumbersDictionary
                 file.OrganizaionId = id;
                 OrganizationFilesRepositiry.Add(file);
             }
+            return id;
         }
 
         public void EditOrganization(Organization org)

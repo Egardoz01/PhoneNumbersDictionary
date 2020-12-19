@@ -58,5 +58,20 @@ namespace PhoneNumbersDictionary
             cmd.ExecuteNonQuery();
         }
 
+        public Organization GetById(int Id)
+        {
+            string query = "SELECT * FROM Organization WHERE Id=" + Id;
+
+            SqlCommand cmd = new SqlCommand(query, _conn);
+            var reader = cmd.ExecuteReader();
+            Organization org;
+            while (reader.Read())
+            {
+                org = new Organization(reader);
+                return org;
+            }
+            return null;
+        }
+
     }
 }
