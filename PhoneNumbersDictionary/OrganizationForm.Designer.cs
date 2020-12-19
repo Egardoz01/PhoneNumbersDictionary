@@ -123,7 +123,7 @@
             this.txtbxProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(187)))), ((int)(((byte)(190)))));
             this.txtbxProfile.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbxProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbxProfile.Location = new System.Drawing.Point(147, 467);
+            this.txtbxProfile.Location = new System.Drawing.Point(147, 384);
             this.txtbxProfile.MaxLength = 200;
             this.txtbxProfile.Multiline = true;
             this.txtbxProfile.Name = "txtbxProfile";
@@ -135,7 +135,7 @@
             this.txtbxLocation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(187)))), ((int)(((byte)(190)))));
             this.txtbxLocation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbxLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbxLocation.Location = new System.Drawing.Point(147, 367);
+            this.txtbxLocation.Location = new System.Drawing.Point(147, 490);
             this.txtbxLocation.MaxLength = 200;
             this.txtbxLocation.Multiline = true;
             this.txtbxLocation.Name = "txtbxLocation";
@@ -158,7 +158,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
-            this.label3.Location = new System.Drawing.Point(6, 484);
+            this.label3.Location = new System.Drawing.Point(6, 404);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 20);
             this.label3.TabIndex = 15;
@@ -169,7 +169,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
-            this.label2.Location = new System.Drawing.Point(6, 383);
+            this.label2.Location = new System.Drawing.Point(6, 512);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(135, 18);
             this.label2.TabIndex = 14;
@@ -180,7 +180,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
-            this.label1.Location = new System.Drawing.Point(5, 297);
+            this.label1.Location = new System.Drawing.Point(5, 303);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 20);
             this.label1.TabIndex = 13;

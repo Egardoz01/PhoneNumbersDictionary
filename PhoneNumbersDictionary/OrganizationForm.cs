@@ -142,7 +142,12 @@ namespace PhoneNumbersDictionary
 
         private void btnAddOrganization_Click(object sender, EventArgs e)
         {
-      
+
+            if (txtbxName.Text == "")
+            {
+                MessageBox.Show("Название организации не может быть пустым", "Ошибка");
+                return;
+            }
             org.Name = txtbxName.Text;
             org.Profile = txtbxProfile.Text;
             org.Location = txtbxLocation.Text;
